@@ -10,10 +10,9 @@ function App() {
 
   return (
     <Router>
-      {windowWidth >= 1040 && <Header />} {/* Render Header only for desktop */}
       <Routes>
         <Route
-          path="/about"
+          path="/"
           element={
             <UserDataProvider>
               <Dashboard />
