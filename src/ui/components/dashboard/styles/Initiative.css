@@ -1,0 +1,131 @@
+
+.initiative-container {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  
+  .topic {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  
+  .paragraphs {
+    
+    margin: 0 auto;
+    padding-bottom: 30px;
+  }
+  
+  .paragraphs p {
+    font-size: 1em;
+    line-height: 0.2;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  
+ 
+  .seven-divs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+  }
+  
+ 
+  .small-box {
+    width: 80px;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.3);
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: #ca5527;
+    border-radius: 5px;
+    border: 2px solid rgb(244, 64, 9);
+    
+  }
+  
+  .vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+  }
+  
+ 
+  .center-box {
+    width: 300px; 
+    height: 250px;
+    background: rgba(10, 11, 10, 0.3);
+    margin: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+    border: 2px solid rgb(244, 64, 9);
+  }
+  /* .center-box {
+    width: 300px; 
+    height: 250px;
+    background: rgba(10, 11, 10, 0.3);
+    margin: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+    border: 2px solid rgb(244, 64, 9);
+  } */
+  .first{
+    padding-top: 2px;
+    height: fit-content;
+    margin-left: 21%;
+    margin-right: 21%;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    border: 2px solid rgb(244, 64, 9);
+    padding-bottom: 2px ;
+
+  }
+  .second{
+    width: 810px;
+    height: 262px;
+    border-radius: 5px;
+    border: 2px solid rgb(244, 64, 9);
+  }
+  
+  .center-box span {
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: azure;
+  }
+  .center-box p{
+    color: aliceblue;
+    margin: 0px;
+    font-size: small;
+  }
+  
+  
+  .know-more-btn {
+    padding: 10px 20px;
+    background-color: #ca5527;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: 600;
+  }
+  
+  .know-more-btn:hover {
+    background-color: #f2500a;
+  }
+  

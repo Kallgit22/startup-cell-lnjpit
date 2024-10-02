@@ -1,0 +1,31 @@
+
+.footer {
+    background-color: #333;  
+    color: white; 
+    display: flex;
+    justify-content: space-around;  
+    align-items: center;
+    padding: 20px;   
+    bottom: 0;
+    width: 100%;
+    height: 6px;
+    z-index: 1000;  
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  .footer-section p{
+    font-size: 14px;
+  }
+  
+  .footer-section a {
+    color: #00aced; 
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+  
