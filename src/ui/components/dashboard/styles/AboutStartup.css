@@ -1,0 +1,144 @@
+.about-startup-container {
+    background-image: url('/public/images/backgrounds/pngtree-city-__cartoon-building-gradient-background-picture-image_1964569.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    margin-top: 10px;
+    color: white;
+    min-height: 70vh;
+    
+    
+  }
+  
+  
+  h1 {
+    color: rgb(20, 20, 19);
+    position: relative;
+    padding: 20px;
+    
+  }
+  
+  .content {
+    display: flex;
+    gap: 30px;
+    
+    margin-top: 5px; 
+    padding-bottom: 10px;
+    
+     
+  }
+  
+  .steps {
+     
+    padding: 20px;
+     
+  }
+  .steps ul{
+    color: black;
+
+  }
+  .steps h2 {
+    color: black;
+    margin-bottom: 10px;
+    
+  }
+  
+  .steps ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none; 
+    padding: 0; 
+  }
+  
+  .steps li {
+    margin-bottom: 20px;
+  }
+  
+  .steps li a{
+    color: black;
+    font-weight: 600;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid #2a2828;
+    padding: 10px 0;
+    
+    
+    
+  }
+  
+  .steps li a:hover {
+    color: #ff4500; 
+}
+  .step{
+    display: flex;
+  }
+  .box{
+    height: 15px;
+    width: 1px;
+    
+
+    
+    background-color: #e1541d;
+    border-radius: 5%;
+    margin: 10px;
+    padding: 20px;
+
+  }
+  .image-explore{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    padding: 90px;
+  }
+  .explore-section {
+     
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    padding: 20px;
+  }
+  
+  .explore-button {
+    margin-top: 25px;
+    padding: 10px 20px;
+    background-color: #ff6600; 
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bolder;
+    border-radius: 15px;
+    
+  }
+  
+  .image-section {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; 
+  }
+  
+  .images {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    
+  }
+  .image{
+    height: 250px;
+    width: 170px;
+    border-color: rgb(19, 18, 18);
+    border-width: 20px;
+    background-color: #cec9c7;
+    border-radius: 2%;
+    border-width: 2px;
+    border: 1px solid rgb(4, 4, 4);
+    
+  }
+  
+  .images img {
+    width: 20%; 
+    height: auto;
+    margin: 0 10px; 
+  }
+  
