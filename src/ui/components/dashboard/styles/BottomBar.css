@@ -1,24 +1,27 @@
 
 .bottom-bar {
     display: flex;
+    height: 40vh;
     background-color: #333;
-    justify-content: space-between;
-    align-items: flex-start;
-    
-    padding: 0px;
-   
+    justify-content: center;
+    margin-top: 100px;
     bottom: 0;
     width: 100%;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    padding: 40px 0px;
+  }
+
+  .bottom-bar .section-wrapper{
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
   }
   
-  .section {
-    flex: 1;
-    text-align: center;
-  }
   
   .section h4 {
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 10px;
     color: #f4f2f2;
   }
@@ -35,7 +38,7 @@
   .section ul li a {
     text-decoration: none;
     color: #f4f6f8;
-    font-size: 14px;
+    font-size: 19px;
   }
   
   .section ul li a:hover {

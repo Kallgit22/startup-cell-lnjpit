@@ -1,131 +1,150 @@
-
 .initiative-container {
-    text-align: center;
-    padding: 50px;
-  }
-  
-  
-  .topic {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-  }
-  
-  
-  .paragraphs {
-    
-    margin: 0 auto;
-    padding-bottom: 30px;
-  }
-  
-  .paragraphs p {
-    font-size: 1em;
-    line-height: 0.2;
-    margin-bottom: 20px;
-    font-weight: 500;
-  }
-  
- 
-  .seven-divs-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px;
-  }
-  
- 
-  .small-box {
-    width: 80px;
-    height: 250px;
-    background: rgba(0, 0, 0, 0.3);
-    margin: 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border: #ca5527;
-    border-radius: 5px;
-    border: 2px solid rgb(244, 64, 9);
-    
-  }
-  
-  .vertical-text {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-  }
-  
- 
-  .center-box {
-    width: 300px; 
-    height: 250px;
-    background: rgba(10, 11, 10, 0.3);
-    margin: 3px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-radius: 5px;
-    border: 2px solid rgb(244, 64, 9);
-  }
-  /* .center-box {
-    width: 300px; 
-    height: 250px;
-    background: rgba(10, 11, 10, 0.3);
-    margin: 3px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-radius: 5px;
-    border: 2px solid rgb(244, 64, 9);
-  } */
-  .first{
-    padding-top: 2px;
-    height: fit-content;
-    margin-left: 21%;
-    margin-right: 21%;
-    display: flex;
-    justify-content: center;
-    border-radius: 5px;
-    border: 2px solid rgb(244, 64, 9);
-    padding-bottom: 2px ;
+  width: 100%;
+  text-align: center;
+  margin-top: 100px;
+}
 
-  }
-  .second{
-    width: 810px;
-    height: 262px;
-    border-radius: 5px;
-    border: 2px solid rgb(244, 64, 9);
-  }
-  
-  .center-box span {
-    font-weight: bold;
-    margin-bottom: 12px;
-    color: azure;
-  }
-  .center-box p{
-    color: aliceblue;
-    margin: 0px;
-    font-size: small;
-  }
-  
-  
-  .know-more-btn {
-    padding: 10px 20px;
-    background-color: #ca5527;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    margin-top: 15px;
-    font-weight: 600;
-  }
-  
-  .know-more-btn:hover {
-    background-color: #f2500a;
-  }
-  
+.topic {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.paragraphs {
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.paragraphs p {
+  font-size: 1.5em;
+  line-height: 0.2;
+  margin-bottom: 20px;
+}
+
+.initiative-container .smart-slider-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.smart-slider-wrapper .smart-slider {
+  width: 80%;
+  height: 50vh;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 10px;
+  justify-content: space-evenly;
+  border: 4px solid #ff3d00;
+  border-radius: 5px;
+}
+
+.smart-slider .smart-slide {
+  flex: 1; /* Allow slides to grow and fill the space */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+  border: 3px solid #ff3d00;
+  border-radius: 5px;
+  transition: flex 0.3s ease; /* Smooth transition for flex change */
+}
+
+.smart-slide img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0; /* Position the image at the bottom */
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute; /* Position overlay */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; /* Fill the entire slide */
+  background-color: rgba(0, 0, 0, 0.65); /* Semi-transparent black */
+  z-index: 1; /* Ensure it is above the image but below the text */
+  transition: opacity 0.3s ease; /* Smooth transition for overlay visibility */
+  opacity: 1; /* Always show the overlay */
+}
+
+.smart-slide:hover .overlay {
+  opacity: 0; /* Hide overlay on hover */
+}
+
+
+.smart-slider .slide-details {
+  position: absolute; /* Positioning the details on top */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; /* Fill the entire slide */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  gap: 40px;
+  background-color: rgba(0, 0, 0, 0.75); /* Dark overlay */
+  color: white; /* Text color */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for overlay visibility */
+}
+
+.smart-slide:hover .slide-details {
+  opacity: 1; /* Show details on hover */
+}
+
+.smart-slider .smart-slide:hover {
+  flex: 2; /* Increase size of hovered slide */
+}
+
+.smart-slider .smart-slide:not(:hover) {
+  flex: 1; /* Keep other slides smaller */
+}
+
+
+.smart-slide h1 {
+  writing-mode: vertical-rl; /* Rotate the text vertically */
+  transform: rotate(180deg); /* Flip the text to read from top to bottom */
+  transition: transform 0.5s ease; /* Smooth transition for rotation */
+  margin: 0; /* Remove default margin */
+  position: absolute; /* Position it correctly */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform-origin: center center; /* Set the origin for transformation */
+  transform: translate(-50%, -50%) rotate(180deg); /* Center the text and rotate it */
+  color: white; /* Set text color */
+  z-index: 1; /* Ensure it is above the overlay */
+  font-size: 1.6em;
+}
+
+.smart-slide:hover h1 {
+  top: 25%;
+  transform: translate(-50%, -50%) rotate(0deg); /* Center the text and rotate to horizontal on hover */
+  writing-mode: horizontal-tb; /* Change to horizontal writing mode */
+}
+
+.slide-details button{
+  cursor: pointer;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 40px;
+  background-color: blue;
+  color: white;
+  z-index: 5;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.slide-details button:hover{
+  background-color: #ff3d00;
+  color: white;
+}
+
+.slide-details b{
+  width: 80%;
+  margin-top: 40px;
+  font-size: 18px;
+}

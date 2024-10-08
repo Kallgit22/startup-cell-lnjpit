@@ -1,8 +1,18 @@
-import Header from '../components/Header';
+import Slider from '../components/dashboard/Sliders';
+import BottomBar from "../components/dashboard/BottomBar";
+import ContactForm from "../components/dashboard/ContactForm";
+import Mentors from "../components/dashboard/Mentor";
+import AboutStartup from "../components/dashboard/AboutStartup";
+import Initiative from "../components/dashboard/Initiative";
 export default function Dashboard() {
   return (
-    <div>
-      <Header/>
+    <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+      <Slider/>
+      <Initiative />
+      <AboutStartup />
+      <Mentors />
+      <ContactForm />
+      <BottomBar />
     </div>
   )
 }

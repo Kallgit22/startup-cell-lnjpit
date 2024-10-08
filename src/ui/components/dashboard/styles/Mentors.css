@@ -1,35 +1,98 @@
 .mentors-container {
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 1200px;
-    min-height: 400px;
-    text-align: center;
-    overflow: hidden; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+
+.mentors-container h2{
+  font-size: 3em;
+}
+.mentors-gallery {
+  width: 80%;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.mentors-gallery .mentor-slider {
+  display: flex;
+  gap: 100px;
+  width: max-content; /* Adjust width dynamically to fit all the slides */
+  animation: scroll 20s linear infinite;
+}
+
+.mentors-gallery .mentor-slider:hover{
+  animation: none;
+}
+
+.mentor-slider .mentor-slide {
+  width: 200px;
+  height: 250px;
+  background-image: url(/public/images/backgrounds/abstract-bubbles-background-with-gradient-line-and-blue-color-good-for-background-banner-or-layout-vector.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.mentor-slide h4 {
+  color: #ff3d00;
+  font-size: 18px;
+}
+
+.mentors-gallery img {
+  width: 120px;
+  height: 120px;
+  margin: 0 20px;
+  border-radius: 60px;
+  cursor: pointer;
+  border: 1px solid #ff3d00;
+}
+
+.mentor-slide .mentor-social-media-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mentor-social-media-link .mentor-social-media-icon {
+  width: 25px;
+  height: 25px;
+  color: blue;
+  cursor: pointer;
+}
+
+.mentor-social-media-link .mentor-social-media-icon:hover {
+  color: #ff3d00;
+}
+
+.mentor-social-media-icon-email {
+  width: 34px;
+  height: 34px;
+  color: blue;
+  cursor: pointer;
+}
+
+.mentor-social-media-icon-email:hover {
+  color: #ff3d00;
+}
+
+/* Infinite scroll keyframes */
+@keyframes scroll {
+  0% {
+    transform: translateX(100%); /* Start at the initial position */
   }
-  
-  h2 {
-    margin-bottom: 20px;
+  100% {
+    transform: translateX(-100%); /* Move the entire slider to the left */
   }
-  
-  .mentors-gallery {
-    margin-top: 7%;
-    display: flex;
-    gap: 10px;
-    animation: scroll 15s linear infinite ; 
-  }
-  
-  .mentors-gallery img {
-    width: 150px; 
-    height: auto;
-    margin: 0 20px; 
-  }
-  
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%); 
-    }
-  }
-  
+}
