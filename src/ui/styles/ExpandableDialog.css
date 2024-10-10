@@ -1,0 +1,48 @@
+.expandable-dialog-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .expandable-dialog-wrapper .dialog-option {
+    display: flex;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  .dialog-option span {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .dialog-option .dialog-option-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .expandable-dialog-wrapper .dialog-content {
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 40px;
+    transition: all 0.5s ease;
+  }
+  
+  .expandable-dialog-wrapper .dialog-show {
+    height: 150px;
+    padding: 20px;
+    transition: all 0.5s ease;
+  }
+  

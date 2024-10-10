@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
-import '../styles/UniversalStyle.css';
+import "../styles/UniversalStyle.css";
 import SearchBar from "./SearchBar";
 
 export default function Header() {
@@ -31,15 +31,11 @@ export default function Header() {
             </ul>
           </div>
           <div className="tobar-right">
-            <ul>
-              <li>
-                <p className="help-number">
-                  <strong>Our Toll Free Number : </strong>
-                  <a href="tel:1800115565">{number}</a>
-                  <span>(10:00 AM to 05:30 PM)</span>
-                </p>
-              </li>
-            </ul>
+            <div className="help-number">
+              <strong>Our Toll Free Number : </strong>
+              <a href="tel:1800115565">{number}</a>
+              <span>(10:00 AM to 05:30 PM)</span>
+            </div>
           </div>
         </div>
       </div>
@@ -83,17 +79,20 @@ export default function Header() {
         <div className="my-container-3">
           <ul className="nav-list">
             <li>
+            <Link to="/">Home</Link>
+            </li>
+            <li>
               <Link to="/about">About</Link>
               <div className="dropdown">
                 <ul>
                   <li>
                     <Link to="/about/story">Our Story</Link>
                   </li>
-                  <div className="horizontal-devider"/>
+                  <div className="horizontal-devider" />
                   <li>
                     <Link to="/about/mission">Mission & Vision</Link>
                   </li>
-                  <div className="horizontal-devider"/>
+                  <div className="horizontal-devider" />
                   <li>
                     <Link to="/about/team">Our Team</Link>
                   </li>
@@ -107,11 +106,11 @@ export default function Header() {
                   <li>
                     <Link to="/aic/about-aic">What is AIC?</Link>
                   </li>
-                  <div className="horizontal-devider"/>
+                  <div className="horizontal-devider" />
                   <li>
                     <Link to="/aic/details">Details</Link>
                   </li>
-                  <div className="horizontal-devider"/>
+                  <div className="horizontal-devider" />
                   <li>
                     <Link to="/aic/contact">Contact</Link>
                   </li>
@@ -125,7 +124,7 @@ export default function Header() {
                   <li>
                     <Link to="/initiatives/program">Startup Programs</Link>
                   </li>
-                  <div className="horizontal-devider"/>
+                  <div className="horizontal-devider" />
                   <li>
                     <Link to="/initiatives/workshop">Workshops</Link>
                   </li>
@@ -135,12 +134,20 @@ export default function Header() {
             <li>
               <Link to="/idea-submission">Idea Submission</Link>
               <div className="dropdown">
-                  <ul>
-                    <li><Link to="/idea-submission/registration">Submit Your Idea</Link></li>
-                    <div className="horizontal-devider"/>
-                    <li><Link to="/idea-submission/guidlines">Submission Guidelines</Link></li>
-                  </ul>
-                </div>
+                <ul>
+                  <li>
+                    <Link to="/idea-submission/registration">
+                      Submit Your Idea
+                    </Link>
+                  </li>
+                  <div className="horizontal-devider" />
+                  <li>
+                    <Link to="/idea-submission/guidlines">
+                      Submission Guidelines
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li>
               <Link to="/blogs">Blogs</Link>
@@ -152,25 +159,9 @@ export default function Header() {
                   <li>
                     <Link to="/gallery/images">Images</Link>
                   </li>
-                  <div className="horizontal-devider"/>
+                  <div className="horizontal-devider" />
                   <li>
                     <Link to="/gallery/videos">Videos</Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <Link to="/incubation-center">Incubation Center</Link>
-              <div className="dropdown">
-                <ul>
-                  <li>
-                    <Link to="/incubation-center/services">Services</Link>
-                  </li>
-                  <div className="horizontal-devider"/>
-                  <li>
-                    <Link to="/incubation-center/success-story">
-                    Success Stories
-                    </Link>
                   </li>
                 </ul>
               </div>

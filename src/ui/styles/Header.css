@@ -62,26 +62,23 @@
 }
 
 .tobar-right {
-  width: 50%;
+  width: 70%;
   display: flex;
   justify-content: flex-end;
-}
-
-.tobar-right ul li p {
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 14px;
-  color: var(--text-color);
-  display: flex;
   align-items: center;
 }
 
-.tobar-right ul li p strong {
-  font-size: 16px;
+.tobar-right .help-number {
+  width: auto;
 }
 
-.tobar-right ul li a {
-  font-size: 18px;
+.help-number strong {
+  font-size: 16px;
+  color: white;
+}
+
+.help-number a {
+  font-size: 16px;
   font-weight: bold;
   text-decoration: none;
   color: var(--text-color);

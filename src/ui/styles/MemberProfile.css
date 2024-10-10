@@ -1,0 +1,76 @@
+.member-profile-wrapper {
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#006e99, #004699);
+  border-radius: 5px;
+  gap: 10px;
+  position: relative;
+  transition: background-image 1s ease;
+  cursor: pointer;
+}
+
+.member-profile-wrapper img {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  transition: all 0.3s ease;
+}
+
+.member-profile-wrapper .member-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.member-details span {
+  font-size: 15px;
+  color: white;
+}
+
+.member-profile-wrapper .social-links {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
+
+/* Hover effects */
+
+.member-profile-wrapper:hover img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.member-profile-wrapper:hover .member-details {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.member-profile-wrapper:hover .social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  z-index: 5;
+}
+
+.social-links .social-icon {
+  color: white;
+}
+
+.social-links .social-icon:hover {
+  color: orangered;
+}

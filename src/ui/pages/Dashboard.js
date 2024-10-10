@@ -1,5 +1,4 @@
 import Slider from '../components/dashboard/Sliders';
-import BottomBar from "../components/dashboard/BottomBar";
 import ContactForm from "../components/dashboard/ContactForm";
 import Mentors from "../components/dashboard/Mentor";
 import AboutStartup from "../components/dashboard/AboutStartup";
@@ -12,7 +11,6 @@ export default function Dashboard() {
       <AboutStartup />
       <Mentors />
       <ContactForm />
-      <BottomBar />
     </div>
   )
 }

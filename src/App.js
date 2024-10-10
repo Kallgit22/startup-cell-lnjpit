@@ -1,32 +1,47 @@
 import "./App.css";
 import UserDataProvider from "./context/UserDataProvider";
-import Header from "./ui/components/Header"
+import Header from "./ui/components/Header";
 import Dashboard from "./ui/pages/Dashboard";
-import Footer from "./ui/components/Footer"
+import Footer from "./ui/components/Footer";
+import BottomBar from "./ui/components/dashboard/BottomBar";
 
 // import Dashboard from "./ui/pages/Dashboard";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import useWindowWidth from "./hooks/useWindowWidth"; // Import the custom hook
+import About from "./ui/pages/About";
 
 function App() {
   const windowWidth = useWindowWidth(); // Get the current window width
-
-  return (
-    <Router>
-      {windowWidth >= 1040 && <Header />}
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <UserDataProvider>
-              <Dashboard />
-            </UserDataProvider>
-          }
-        />
-      </Routes>
-      {windowWidth >= 1040 && <Footer />}
-      {windowWidth < 1040 && <p>This site is currently under construction. Please visit on a desktop for full access.</p>} {/* Message for mobile users */}
-    </Router>
+  return windowWidth >= 1440 ? (
+    <div className="app">
+      <Router>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <UserDataProvider>
+                <Dashboard />
+              </UserDataProvider>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <UserDataProvider>
+                <About />
+              </UserDataProvider>
+            }
+          />
+        </Routes>
+        <BottomBar />
+        <Footer />
+      </Router>
+    </div>
+  ) : (
+    <div>
+      <h1>Only Accesible in Dekstop</h1>
+    </div>
   );
 }
 
