@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import useWindowWidth from "./hooks/useWindowWidth"; // Import the custom hook
 import About from "./ui/pages/About";
 import Initiative from "./ui/pages/Initiative";
+import Gallery from "./ui/pages/Gallery";
 
 function App() {
   const windowWidth = useWindowWidth(); // Get the current window width
@@ -38,7 +39,15 @@ function App() {
             path="/initiatives/:section?"
             element={
               <UserDataProvider>
-                <Initiative/>
+                <Initiative />
+              </UserDataProvider>
+            }
+          />
+          <Route
+            path="/gallery/:section?"
+            element={
+              <UserDataProvider>
+                <Gallery />
               </UserDataProvider>
             }
           />

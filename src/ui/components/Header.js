@@ -59,7 +59,7 @@ export default function Header() {
               <li className="logo-2">
                 <Link to="https://commerce.gov.in/">
                   <img
-                    src="https://www.startupindia.gov.in/content/dam/invest-india/newhomepage/Logo1.png"
+                    src="/images/atal-incubation.jpg"
                     alt=""
                   />
                 </Link>
@@ -165,7 +165,7 @@ export default function Header() {
               <div className="dropdown">
                 <ul>
                   <li>
-                    <Link to="/gallery/images">Images</Link>
+                    <Link to="/gallery/event-gallery-section">Images</Link>
                   </li>
                   <div className="horizontal-devider" />
                   <li>
