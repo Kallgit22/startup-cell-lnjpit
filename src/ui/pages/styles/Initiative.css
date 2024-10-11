@@ -1,0 +1,120 @@
+.initiative-poster-section {
+  width: 100%;
+  height: 60vh;
+  background-image: url(/public/images/backgrounds/uozk2YSyyI4RNP1tEOA7.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+.initiative-poster-section h1 {
+  color: #ff3d00;
+  margin: 0;
+  padding: 0;
+}
+
+.initiative-poster-section h3 {
+  width: 30%;
+  color: white;
+  margin-left: 40px;
+  margin: 20px 0px;
+  padding: 0;
+  font-weight: normal;
+  font-size: 22px;
+}
+
+.initiative-context-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  align-items: center;
+}
+
+.initiative-context-section h1 {
+  margin: 0;
+  color: #ff3d00;
+}
+
+.initiative-context-section p {
+  font-size: 20px;
+  width: 50%;
+  text-align: center;
+}
+
+.initiative-context-section .about-initiative-container {
+  width: 80%;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.initiative-tab-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15vh;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.initiative-tab-section .tab-bar-container {
+  display: flex;
+}
+
+.tab-bar-container .verticle-devider {
+  width: 4px;
+  height: auto;
+  background-color: rgb(204, 226, 244);
+}
+
+.tab-bar-container .tab-active {
+  border-bottom: 4px solid orangered;
+}
+
+.tab-bar-container .tab-bar {
+  box-sizing: border-box;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tab-bar span {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.initiative-tab-section .tab-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.initiative-details h1 {
+  color: #ff3d00;
+  font-size: 32px;
+  margin: 10px 0px;
+  padding: 0;
+}
+
+.initiative-details {
+  width: 90%;
+  margin: 0px 5%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.initiative-benefitImpact,
+.initiative-howApply,
+.initiative-introduction,
+.initiative-whoApply p {
+  font-size: 18px;
+}

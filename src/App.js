@@ -9,6 +9,7 @@ import BottomBar from "./ui/components/dashboard/BottomBar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import useWindowWidth from "./hooks/useWindowWidth"; // Import the custom hook
 import About from "./ui/pages/About";
+import Initiative from "./ui/pages/Initiative";
 
 function App() {
   const windowWidth = useWindowWidth(); // Get the current window width
@@ -26,10 +27,18 @@ function App() {
             }
           />
           <Route
-            path="/about"
+            path="/about/:section?"
             element={
               <UserDataProvider>
                 <About />
+              </UserDataProvider>
+            }
+          />
+          <Route
+            path="/initiatives/:section?"
+            element={
+              <UserDataProvider>
+                <Initiative/>
               </UserDataProvider>
             }
           />
