@@ -144,7 +144,7 @@ export default function Header() {
               <div className="dropdown">
                 <ul>
                   <li>
-                    <Link to="/idea-submission/registration">
+                    <Link to="/idea-submission/registration-form">
                       Submit Your Idea
                     </Link>
                   </li>

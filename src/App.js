@@ -11,6 +11,7 @@ import useWindowWidth from "./hooks/useWindowWidth"; // Import the custom hook
 import About from "./ui/pages/About";
 import Initiative from "./ui/pages/Initiative";
 import Gallery from "./ui/pages/Gallery";
+import IdeaRegistrationPage from "./ui/pages/IdeaRegistrationPage";
 
 function App() {
   const windowWidth = useWindowWidth(); // Get the current window width
@@ -48,6 +49,14 @@ function App() {
             element={
               <UserDataProvider>
                 <Gallery />
+              </UserDataProvider>
+            }
+          />
+          <Route
+            path="/idea-submission/:section?"
+            element={
+              <UserDataProvider>
+                <IdeaRegistrationPage/>
               </UserDataProvider>
             }
           />
