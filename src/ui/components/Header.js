@@ -59,7 +59,7 @@ export default function Header() {
               <li className="logo-2">
                 <Link to="https://commerce.gov.in/">
                   <img
-                    src="https://www.startupindia.gov.in/content/dam/invest-india/newhomepage/Logo1.png"
+                    src="/images/atal-incubation.jpg"
                     alt=""
                   />
                 </Link>
@@ -79,7 +79,7 @@ export default function Header() {
         <div className="my-container-3">
           <ul className="nav-list">
             <li>
-            <Link to="/">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="/about">About</Link>
@@ -96,10 +96,14 @@ export default function Header() {
                   <li>
                     <Link to="/about/team">Our Team</Link>
                   </li>
+                  <div className="horizontal-devider" />
+                  <li>
+                    <Link to="/about/faqs">FAQs</Link>
+                  </li>
                 </ul>
               </div>
             </li>
-            <li>
+            {/* <li>
               <Link to="/aic">AIC</Link>
               <div className="dropdown">
                 <ul>
@@ -116,11 +120,15 @@ export default function Header() {
                   </li>
                 </ul>
               </div>
-            </li>
+            </li> */}
             <li>
               <Link to="/initiatives">Initiatives</Link>
               <div className="dropdown">
                 <ul>
+                  <li>
+                    <Link to="/initiatives/impact">Initiative Vision</Link>
+                  </li>
+                  <div className="horizontal-devider" />
                   <li>
                     <Link to="/initiatives/program">Startup Programs</Link>
                   </li>
@@ -136,7 +144,7 @@ export default function Header() {
               <div className="dropdown">
                 <ul>
                   <li>
-                    <Link to="/idea-submission/registration">
+                    <Link to="/idea-submission/registration-form">
                       Submit Your Idea
                     </Link>
                   </li>
@@ -157,7 +165,7 @@ export default function Header() {
               <div className="dropdown">
                 <ul>
                   <li>
-                    <Link to="/gallery/images">Images</Link>
+                    <Link to="/gallery/event-gallery-section">Images</Link>
                   </li>
                   <div className="horizontal-devider" />
                   <li>

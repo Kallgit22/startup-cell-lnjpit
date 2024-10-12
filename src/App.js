@@ -11,6 +11,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import useWindowWidth from "./hooks/useWindowWidth"; // Import the custom hook
 import About from "./ui/pages/About";
 import Blog from "./ui/pages/Blog";
+import Initiative from "./ui/pages/Initiative";
+import Gallery from "./ui/pages/Gallery";
+import IdeaRegistrationPage from "./ui/pages/IdeaRegistrationPage";
 
 function App() {
   const windowWidth = useWindowWidth(); // Get the current window width
@@ -28,7 +31,7 @@ function App() {
             }
           />
           <Route
-            path="/about"
+            path="/about/:section?"
             element={
               <UserDataProvider>
                 <About />
@@ -36,10 +39,33 @@ function App() {
             }
           />
           <Route
+
             path="/blogs"
             element={
               <UserDataProvider>
                 <Blog />
+
+            path="/initiatives/:section?"
+            element={
+              <UserDataProvider>
+                <Initiative />
+              </UserDataProvider>
+            }
+          />
+          <Route
+            path="/gallery/:section?"
+            element={
+              <UserDataProvider>
+                <Gallery />
+              </UserDataProvider>
+            }
+          />
+          <Route
+            path="/idea-submission/:section?"
+            element={
+              <UserDataProvider>
+                <IdeaRegistrationPage/>
+
               </UserDataProvider>
             }
           />

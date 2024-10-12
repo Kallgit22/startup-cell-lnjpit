@@ -25,10 +25,9 @@ export default function About() {
     ); // Decrement and loop to the end if at the start
   };
 
-  // Scroll to the specific section when the component loads or when the URL changes
   useEffect(() => {
     if (section) {
-      const element = document.querySelector(`.${section}`);
+      const element = document.querySelector(`.${section}`); // Adjusted to use className or id
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
@@ -172,7 +171,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="about-us-mission-section">
+      <section className="about-us-mission-section mission">
         <div className="mission-section-heading">
           <h1>Our Mission</h1>
         </div>
@@ -243,7 +242,7 @@ export default function About() {
 
       <section className="about-us-gallery-section"></section>
 
-      <section className="about-us-team-section">
+      <section className="about-us-team-section team">
         <div className="team-section-heading">
           <span style={{ color: "#004699" }}>Faces</span>
           <span>Behind The Cell</span>
@@ -278,7 +277,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="about-us-help-section">
+      <section className="about-us-help-section faqs">
         <div className="help-section-details">
           <h1 style={{color:'white'}}>FAQs</h1>
         </div>

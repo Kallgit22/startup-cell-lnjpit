@@ -1,0 +1,291 @@
+.registration-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Page Header */
+  .registration-page .header-section {
+    width: 100%;
+    box-sizing: border-box;
+    height: 40vh;
+    text-align: center;
+    padding: 60px 0;
+    background-image: url(/public/images/backgrounds/iStock-886349386.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .header-section::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65); /* Adjust transparency */
+    z-index: 0;
+  }
+  
+  .header-section h1,
+  .header-section p {
+    position: relative;
+    z-index: 2; /* Ensures the text appears above the overlay */
+  }
+  
+  .header-section h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .header-section p {
+    font-size: 24px;
+    margin-top: 10px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Motivation Section */
+  .registration-page .motivation-section {
+    width: 100%;
+    padding: 60px;
+    box-sizing: border-box;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .motivation-section h2 {
+    font-size: 32px;
+    color: orangered;
+    font-weight: 600;
+  }
+  
+  .motivation-section p {
+    font-size: 20px;
+    color: #232323;
+    line-height: 1.8;
+    margin-top: 15px;
+    width: 75%;
+  }
+  
+  /* Guidelines Section */
+  .registration-page .guideline-section {
+    width: 100%;
+    padding: 60px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+  }
+  
+  .guideline-section h2 {
+    font-size: 28px;
+    color: orangered;
+  }
+  
+  .guideline-section ul {
+    font-size: 20px;
+    color: #555;
+    line-height: 1.8;
+    margin-top: 20px;
+    padding-left: 20px;
+  }
+  
+  .guideline-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Important Dates Section */
+  .registration-page .dates-section {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 60px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .dates-section h2 {
+    font-size: 28px;
+    color: orangered;
+  }
+  
+  .dates-section ul {
+    list-style-type: none;
+    font-size: 20px;
+    color: #555;
+    line-height: 2;
+  }
+  
+  .dates-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Form Section */
+  .registration-page .form-section {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 60px;
+    background-color: #f9f9f9;
+  }
+  
+  .form-section h2 {
+    font-size: 28px;
+    color: orangered;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  form label {
+    font-size: 20px;
+    color: #555;
+    font-weight: bold;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form select,
+  form textarea {
+    padding: 18px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  form input[type="text"]:focus,
+  form input[type="email"]:focus,
+  form input[type="tel"]:focus,
+  form select:focus,
+  form textarea:focus {
+    border-color: orangered;
+  }
+  
+  form button {
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* Custom File Input Style */
+  .file-input-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start */
+  }
+  
+  .file-input-container label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px; /* Spacing between label and input */
+  }
+  
+  .file-input {
+    display: none; /* Hide the default file input */
+  }
+  
+  .custom-file-input {
+    display: inline-block;
+    padding: 12px 20px;
+    color: white;
+    border: none;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  }
+  
+  .custom-file-input:hover {
+    border: 2px solid orangered;
+  }
+  
+  .custom-file-input:active {
+    transform: translateY(0); /* Reset effect when clicked */
+  }
+  
+  .custom-file-input::after {
+    content: attr(data-file-name); /* Display selected file name */
+    margin-left: 10px; /* Spacing */
+    color: #555; /* File name color */
+  }
+  
+  /* FAQ Section */
+  .registration-page .faq-section {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 60px;
+    background-color: #fff;
+  }
+  
+  .faq-section h2 {
+    font-size: 28px;
+    color: orangered;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .faq-item h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .faq-item p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  /* Contact Section */
+  .registration-page .contact-section {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 60px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .contact-section h2 {
+    font-size: 28px;
+    color: orangered;
+    margin-bottom: 20px;
+  }
+  
+  .contact-section p {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .contact-section strong {
+    color: #007bff;
+  }
+  
