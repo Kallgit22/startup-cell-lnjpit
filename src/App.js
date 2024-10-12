@@ -5,10 +5,12 @@ import Dashboard from "./ui/pages/Dashboard";
 import Footer from "./ui/components/Footer";
 import BottomBar from "./ui/components/dashboard/BottomBar";
 
+
 // import Dashboard from "./ui/pages/Dashboard";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import useWindowWidth from "./hooks/useWindowWidth"; // Import the custom hook
 import About from "./ui/pages/About";
+import Blog from "./ui/pages/Blog";
 import Initiative from "./ui/pages/Initiative";
 import Gallery from "./ui/pages/Gallery";
 import IdeaRegistrationPage from "./ui/pages/IdeaRegistrationPage";
@@ -37,6 +39,12 @@ function App() {
             }
           />
           <Route
+
+            path="/blogs"
+            element={
+              <UserDataProvider>
+                <Blog />
+
             path="/initiatives/:section?"
             element={
               <UserDataProvider>
@@ -57,6 +65,7 @@ function App() {
             element={
               <UserDataProvider>
                 <IdeaRegistrationPage/>
+
               </UserDataProvider>
             }
           />
