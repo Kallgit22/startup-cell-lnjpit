@@ -1,23 +1,24 @@
 .member-profile-wrapper {
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 170px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background: linear-gradient(#006e99, #004699);
   border-radius: 5px;
-  gap: 10px;
+  gap: 20px;
   position: relative;
   transition: background-image 1s ease;
   cursor: pointer;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
-.member-profile-wrapper img {
-  width: 120px;
-  height: 120px;
-  border-radius: 60px;
+.member-profile-wrapper .member-image {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
   transition: all 0.3s ease;
 }
 
@@ -30,8 +31,9 @@
 }
 
 .member-details span {
-  font-size: 15px;
+  font-size: 11px;
   color: white;
+  text-align: center;
 }
 
 .member-profile-wrapper .social-links {
@@ -41,17 +43,21 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 70, 153, 0.5);
   z-index: 1;
 }
 
 /* Hover effects */
 
+.member-profile-wrapper:hover{
+  padding: 0;
+}
+
 .member-profile-wrapper:hover img {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 5px;
+  border-radius:5px;
 }
 
 .member-profile-wrapper:hover .member-details {

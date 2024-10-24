@@ -26,12 +26,12 @@ export default function ExpandableDialog() {
         )}
       </div>
       <div className={`dialog-content ${click ? "dialog-show" : ""}`}>
-        <h3>
+        <span>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae sunt
           sed repellat saepe omnis, officiis laborum cupiditate eius nisi quod!
           Deleniti nemo provident iste repellat tenetur voluptatibus odit
           voluptate et!
-        </h3>
+        </span>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@
 
 
 .mentors-container h2{
-  font-size: 3em;
+  font-size: 2em;
 }
 .mentors-gallery {
   width: 80%;
@@ -22,17 +22,28 @@
 .mentors-gallery .mentor-slider {
   display: flex;
   gap: 100px;
-  width: max-content; /* Adjust width dynamically to fit all the slides */
+  width: max-content;
   animation: scroll 20s linear infinite;
+  animation-play-state: running;
 }
 
-.mentors-gallery .mentor-slider:hover{
-  animation: none;
+.mentors-gallery .mentor-slider:hover {
+  animation-play-state: paused;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%); /* Start from the right side */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left side */
+  }
+}
+
 
 .mentor-slider .mentor-slide {
-  width: 200px;
-  height: 250px;
+  width: 180px;
+  height: 230px;
   background-image: url(/public/images/backgrounds/abstract-bubbles-background-with-gradient-line-and-blue-color-good-for-background-banner-or-layout-vector.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -43,56 +54,52 @@
   align-items: center;
   box-sizing: border-box;
   padding: 10px;
+  gap: 20px;
+  cursor: pointer;
 }
 
 .mentor-slide h4 {
   color: #ff3d00;
-  font-size: 18px;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
 }
 
 .mentors-gallery img {
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   margin: 0 20px;
   border-radius: 60px;
   cursor: pointer;
   border: 1px solid #ff3d00;
 }
 
-.mentor-slide .mentor-social-media-link {
+.mentor-slide .mentor-details {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
 }
 
-.mentor-social-media-link .mentor-social-media-icon {
-  width: 25px;
-  height: 25px;
-  color: blue;
-  cursor: pointer;
+.mentor-details span{
+  color: black;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
 }
 
-.mentor-social-media-link .mentor-social-media-icon:hover {
-  color: #ff3d00;
+.mentor-details .mentor-email{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
-.mentor-social-media-icon-email {
-  width: 34px;
-  height: 34px;
-  color: blue;
-  cursor: pointer;
+.mentor-email a{
+  text-decoration: none;
+  font-size: 11px;
 }
 
-.mentor-social-media-icon-email:hover {
-  color: #ff3d00;
-}
 
-/* Infinite scroll keyframes */
-@keyframes scroll {
-  0% {
-    transform: translateX(100%); /* Start at the initial position */
-  }
-  100% {
-    transform: translateX(-100%); /* Move the entire slider to the left */
-  }
-}

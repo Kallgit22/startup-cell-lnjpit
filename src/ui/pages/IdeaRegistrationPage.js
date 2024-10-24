@@ -14,10 +14,11 @@ export default function IdeaRegistrationPage() {
     }
   }, [section]);
 
+
   return (
     <div className="registration-page">
       <div className="header-section">
-        <h1>Idea Registration Portal</h1>
+        <h2>Idea Registration Portal</h2>
         <p>
           Submit your innovative ideas to be part of the future entrepreneurship
           journey!

@@ -7,30 +7,50 @@ import { MdEmail } from "react-icons/md";
 export default function MemberProfile({ data }) {
   return (
     <div className="member-profile-wrapper">
-      <img src={data.image || '/images/Surbhi-Singh.jpg'} alt={data.name || "Member Profile"} />
+      <img
+        className="member-image"
+        src={data.image_src}
+        alt={data.name || "Member Profile"}
+      />
       <div className="member-details">
-        <span style={{ fontSize: "18px" }}>{data.name}</span>
+        <span style={{ fontSize: "13px" }}>{data.name}</span>
         <span>{data.designation}</span>
       </div>
       <div className="social-links">
-        {data.linkedin && (
-          <a href={data.linkedin} target="_blank" rel="noopener noreferrer">
-            <FaLinkedin className="social-icon" style={{ width: "32px", height: "32px" }} />
+        {data.linked_in && (
+          <a href={data.linked_in} target="_blank" rel="noopener noreferrer">
+            <FaLinkedin
+              className="social-icon"
+              style={{ width: "22px", height: "22px" }}
+            />
           </a>
         )}
         {data.instagram && (
           <a href={data.instagram} target="_blank" rel="noopener noreferrer">
-            <FaInstagram className="social-icon" style={{ width: "32px", height: "32px" }} />
+            <FaInstagram
+              className="social-icon"
+              style={{ width: "22px", height: "22px" }}
+            />
           </a>
         )}
         {data.email && (
-          <a href={`mailto:${data.email}`} target="_blank" rel="noopener noreferrer">
-            <MdEmail className="social-icon" style={{ width: "32px", height: "32px" }} />
+          <a
+            href={`mailto:${data.email}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MdEmail
+              className="social-icon"
+              style={{ width: "24px", height: "24px" }}
+            />
           </a>
         )}
         {data.facebook && (
           <a href={data.facebook} target="_blank" rel="noopener noreferrer">
-            <FaFacebookSquare className="social-icon" style={{ width: "32px", height: "32px" }} />
+            <FaFacebookSquare
+              className="social-icon"
+              style={{ width: "22px", height: "22px" }}
+            />
           </a>
         )}
       </div>
@@ -49,18 +69,5 @@ MemberProfile.propTypes = {
     email: PropTypes.string,
     facebook: PropTypes.string,
   }),
-};
-
-// Adding defaultProps for default values
-MemberProfile.defaultProps = {
-  data: {
-    name: "Unknown Member",
-    designation: "Designation",
-    image: "/images/profile.png",
-    linkedin: "",
-    instagram: "",
-    email: "",
-    facebook: "",
-  },
 };
 

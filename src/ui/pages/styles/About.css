@@ -9,8 +9,7 @@
 
 .about-us-main-poster-section {
   width: 100%;
-  margin-top: 20px;
-  height: calc(100vh - 300px);
+  height: calc(100vh - 200px);
   display: flex;
   position: relative;
   background-image: url(/public/images/backgrounds/person-think.jpg);
@@ -20,22 +19,24 @@
 
 .about-us-main-poster-section .poster-heading {
   margin-left: 8%;
-  margin-top: 5%;
+  margin-top: 1%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 600px;
+  width: 400px;
   max-height: 250px;
-  gap: 20px;
+  gap: 10px;
 }
 
 .poster-heading h1 {
-  font-size: 7rem;
+  font-size: 5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .poster-heading .verticle-line {
-  height: 100%;
-  width: 35px;
+  height: 70%;
+  width: 30px;
   background-color: orangered;
 }
 
@@ -57,7 +58,8 @@
 }
 
 .about-us-details h2 {
-  width: 40%;
+  width: 45%;
+  font-size: 18px;
 }
 
 .about-us-mission-section {
@@ -65,7 +67,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 
 .about-us-mission-section .mission-section-heading {
@@ -74,22 +76,25 @@
 }
 .about-us-mission-section .mission-box {
   width: 90%;
-  border: 4px solid skyblue;
+  border: 3px solid skyblue;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
   position: relative;
   box-sizing: border-box;
-  padding: 40px;
+  padding: 20px;
 }
 
 .mission-box .mission-logo {
   width: 40%;
+  display: flex;
+  align-items: center;
 }
 
 .mission-logo img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }
 
 .mission-box .mission-details {
@@ -108,18 +113,20 @@
 
 .mission-details-heading .verticle-line {
   width: 15px;
-  height: 35px;
+  height: 25px;
   background-color: orangered;
 }
 
 .mission-details-heading h2 {
-  font-size: 32px;
+  font-size: 18px;
   text-shadow: 0 0 2px #0099ff, 0 0 3px #0000ff;
+  margin: 0;
+  padding: 0;
 }
 
 .mission-details b {
   width: 80%;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 2dp;
 }
@@ -169,7 +176,7 @@
   padding: 0;
   margin: 0;
   font-weight: bolder;
-  font-size: 55px;
+  font-size: 32px;
 }
 
 .about-us-team-section .team-slider-wrapper {
@@ -191,16 +198,16 @@
 }
 
 .slider-container .arrow-icon-right {
-  width: 48px;
-  height: 48px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
   z-index: 4;
 }
 
 .slider-container .arrow-icon-left {
   transform: rotate(180deg);
-  width: 48px;
-  height: 48px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
   z-index: 4;
 }
@@ -252,6 +259,6 @@
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     padding: 20px;
 }

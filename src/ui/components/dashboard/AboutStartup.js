@@ -10,10 +10,10 @@ const AboutStartup = () => {
       <div className="content">
         <div className="steps">
           <div className="step">
-            <div className="box"></div>
+            <div className="box">
             <h2>Steps</h2>
+            </div>
           </div>
-
           <ul>
             <li>
               <span target="_blank" rel="noopener noreferrer">

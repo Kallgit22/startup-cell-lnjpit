@@ -30,24 +30,23 @@ export default function SearchBar({ onSearch }) {
     padding: '8px',
     border: 'none',
     outline: 'none',
-    margin: '3px 8px',
     backgroundColor: 'transparent',
-    fontSize: '20px', // Add this line to increase the text size
+    fontSize: '16px', // Add this line to increase the text size
   };
   
 
   const iconStyle = {
     color: 'white', // Set the icon color to white for better contrast
     cursor: 'pointer',
-    width: '25px',
-    height: '25px',
+    width: '20px',
+    height: '20px',
     
   };
 
   const searchIconBoxStyle = {
     backgroundColor: '#FF3D00',
-    width: '60px',
-    height: '55px',
+    width: '45px',
+    height: '38px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

@@ -1,10 +1,8 @@
 import "./App.css";
-import UserDataProvider from "./context/UserDataProvider";
 import Header from "./ui/components/Header";
 import Dashboard from "./ui/pages/Dashboard";
 import Footer from "./ui/components/Footer";
 import BottomBar from "./ui/components/dashboard/BottomBar";
-
 
 // import Dashboard from "./ui/pages/Dashboard";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -14,61 +12,25 @@ import Blog from "./ui/pages/Blog";
 import Initiative from "./ui/pages/Initiative";
 import Gallery from "./ui/pages/Gallery";
 import IdeaRegistrationPage from "./ui/pages/IdeaRegistrationPage";
+import BlogDetail from "./ui/pages/BlogDetail";
 
 function App() {
   const windowWidth = useWindowWidth(); // Get the current window width
-  return windowWidth >= 1440 ? (
+  return windowWidth >= 940 ? (
     <div className="app">
       <Router>
         <Header />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <UserDataProvider>
-                <Dashboard />
-              </UserDataProvider>
-            }
-          />
-          <Route
-            path="/about/:section?"
-            element={
-              <UserDataProvider>
-                <About />
-              </UserDataProvider>
-            }
-          />
-          <Route
-
-            path="/blogs"
-            element={
-              <UserDataProvider>
-                <Blog />
-
-            path="/initiatives/:section?"
-            element={
-              <UserDataProvider>
-                <Initiative />
-              </UserDataProvider>
-            }
-          />
-          <Route
-            path="/gallery/:section?"
-            element={
-              <UserDataProvider>
-                <Gallery />
-              </UserDataProvider>
-            }
-          />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/about/:section?" element={<About />} />
+          <Route path="/initiatives/:section?" element={<Initiative />} />
+          <Route path="/gallery/:section?" element={<Gallery />} />
           <Route
             path="/idea-submission/:section?"
-            element={
-              <UserDataProvider>
-                <IdeaRegistrationPage/>
-
-              </UserDataProvider>
-            }
+            element={<IdeaRegistrationPage />}
           />
+          <Route path="/blogs/:section?" element={<Blog />} />
+          <Route path="/blog-detail" element={<BlogDetail />} />
         </Routes>
         <BottomBar />
         <Footer />

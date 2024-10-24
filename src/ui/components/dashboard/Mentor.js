@@ -1,67 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../dashboard/styles/Mentors.css";
-import { SiLinkedin } from "react-icons/si";
-import { SiInstagram } from "react-icons/si";
-import { MdEmail } from "react-icons/md";
-import { ImFacebook2 } from "react-icons/im";
+import axios from "axios";
 
 const Mentors = () => {
-  const mentorData = [
-    {
-      name: "Abhishek Paswan",
-      socialLinks: { linkedIn: "", email: "", facebook: "", ionstagram: "" },
-      image: "/images/abhishek.jpg",
-    },
-    {
-      name: "Lovely Singh",
-      socialLinks: { linkedIn: "", email: "", facebook: "", ionstagram: "" },
-      image: "/images/lovely.jpg",
-    },
-    {
-      name: "Dr. Mithilesh Singh",
-      socialLinks: { linkedIn: "", email: "", facebook: "", ionstagram: "" },
-      image: "/images/Mithilesh-Singh.jpg",
-    },
-    {
-      name: "Surbhi Singh",
-      socialLinks: { linkedIn: "", email: "", facebook: "", ionstagram: "" },
-      image: "/images/Surbhi-Singh.jpg",
-    },
-    {
-      name: "Abhishek Paswan",
-      socialLinks: { linkedIn: "", email: "", facebook: "", ionstagram: "" },
-      image: "/images/abhishek.jpg",
-    },
-    {
-      name: "Lovely Singh",
-      socialLinks: { linkedIn: "", email: "", facebook: "", ionstagram: "" },
-      image: "/images/lovely.jpg",
-    },
-    {
-      name: "Dr. Mithilesh Singh",
-      socialLinks: { linkedIn: "", email: "", facebook: "", ionstagram: "" },
-      image: "/images/Mithilesh-Singh.jpg",
-    },
-    {
-      name: "Surbhi Singh",
-      socialLinks: { linkedIn: "", email: "", facebook: "", ionstagram: "" },
-      image: "/images/Surbhi-Singh.jpg",
-    },
-  ];
+  const [mentorData, setMentorData] = useState(null);
+
+  useEffect(()=>{
+    axios.get("https://api.startupcelllnjpitchapra.in/wp-json/startupcell/v1/mentors")
+    .then((response)=>{
+      console.log(response.data[0]);
+      setMentorData(response.data)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+  },[])
   return (
     <div className="mentors-container">
       <h2>Our Mentors</h2>
       <div className="mentors-gallery">
         <div className="mentor-slider">
-          {mentorData.map((mentor, index) => (
+          {mentorData && mentorData.map((mentor, index) => (
             <div key={index} className="mentor-slide">
-              <img src={mentor.image} alt="Mentor 4" />
-              <h4>{mentor.name}</h4>
-              <div className="mentor-social-media-link">
-                <SiInstagram className="mentor-social-media-icon" />
-                <SiLinkedin className="mentor-social-media-icon" />
-                <MdEmail className="mentor-social-media-icon-email" />
-                <ImFacebook2 className="mentor-social-media-icon" />
+              <img src={mentor.image_src} alt="Mentor 4" />
+              <div className="mentor-details">
+                <h4>{mentor.name}</h4>
+                <span>{mentor.designation}</span>
+                <div className="mentor-email">
+                  <span>Email:</span>
+                  <a href="mailto:shivmouryacse@gmail.com">
+                    {mentor.email}
+                  </a>
+                </div>
               </div>
             </div>
           ))}

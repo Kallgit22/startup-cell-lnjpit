@@ -1,21 +1,9 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import "../dashboard/styles/Slider.css";
 
-const Slider = () => {
-  const [mainPoster, setMainPoster] = useState("/images/startup-poster.jpg");
+const Slider = ({ posters, notices, onclickExplore }) => {
+  const [mainPoster, setMainPoster] = useState(posters[0]);
   const [activeIndex, setActiveIndex] = useState(0);
-
-  // Memoizing the posters array to avoid unnecessary re-renders
-  const posters = useMemo(
-    () => [
-      "/images/startup-poster.jpg",
-      "/images/backgrounds/startup-mahakumbh-to-tell-the-world-that-spring-is-coming.webp",
-      "/images/backgrounds/Startup_Mahakumbh_PM_Narendra_Modi_ecosystem_1710915148775_1710915148910.webp",
-      "/images/backgrounds/startup-mahakumbh-to-tell-the-world-that-spring-is-coming.webp",
-      "/images/backgrounds/hashstudioz-at-startup-mahakumbh-expo.webp",
-    ],
-    []
-  ); // Empty dependency array to ensure it only initializes once
 
   const handlePosterClick = (poster, index) => {
     setActiveIndex(index);
@@ -38,22 +26,31 @@ const Slider = () => {
   return (
     <div className="app-container">
       <div className="notice-bar">
-        <a
-          href="https://link1.com"
-          className="notice"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Upcoming Outreach program coming soon
-        </a>
-        <a
-          href="https://link2.com"
-          className="notice"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Idea submission is live now
-        </a>
+        {notices &&
+          notices.map((notice, index) => (
+            <div style={{ display: "flex", gap: "10px" }}>
+              <a
+                href={notice.url}
+                className="notice"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {notice.notification}
+              </a>
+              {index < notices.length - 1 ? (
+                <div
+                  style={{
+                    width: "1.5px",
+                    height: "100%",
+                    backgroundColor: "black",
+                    rotate: "20deg",
+                  }}
+                ></div>
+              ) : (
+                ""
+              )}
+            </div>
+          ))}
       </div>
 
       <div className="main-poster">
@@ -72,7 +69,9 @@ const Slider = () => {
         ))}
       </div>
 
-      <button className="explore-button">Explore</button>
+      <button className="explore-button" onClick={onclickExplore}>
+        Explore
+      </button>
     </div>
   );
 };

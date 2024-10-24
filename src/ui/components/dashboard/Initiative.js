@@ -1,9 +1,9 @@
 import React from "react";
 import "../dashboard/styles/Initiative.css";
 
-const Initiative = (data) => {
+const Initiative = ({ data, className }) => {
   return (
-    <div className="initiative-container">
+    <div className={className}>
       <h1 className="topic">Our Initiative</h1>
 
       <div className="paragraphs">

@@ -34,20 +34,20 @@
     z-index: 0;
   }
   
-  .header-section h1,
+  .header-section h2,
   .header-section p {
     position: relative;
-    z-index: 2; /* Ensures the text appears above the overlay */
+    z-index: 0;
   }
   
-  .header-section h1 {
-    font-size: 42px;
+  .header-section h2 {
+    font-size: 24px;
     font-weight: 700;
     color: white;
   }
   
   .header-section p {
-    font-size: 24px;
+    font-size: 18px;
     margin-top: 10px;
     color: white;
     font-weight: bold;
@@ -59,21 +59,24 @@
     padding: 60px;
     box-sizing: border-box;
     background-color: #fff;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .motivation-section h2 {
-    font-size: 32px;
+    font-size: 24px;
     color: orangered;
     font-weight: 600;
   }
   
   .motivation-section p {
-    font-size: 20px;
+    font-size: 18px;
     color: #232323;
     line-height: 1.8;
     margin-top: 15px;
     width: 75%;
+    text-align: center;
   }
   
   /* Guidelines Section */
@@ -85,12 +88,12 @@
   }
   
   .guideline-section h2 {
-    font-size: 28px;
+    font-size: 24px;
     color: orangered;
   }
   
   .guideline-section ul {
-    font-size: 20px;
+    font-size: 16px;
     color: #555;
     line-height: 1.8;
     margin-top: 20px;
@@ -111,13 +114,13 @@
   }
   
   .dates-section h2 {
-    font-size: 28px;
+    font-size: 24px;
     color: orangered;
   }
   
   .dates-section ul {
     list-style-type: none;
-    font-size: 20px;
+    font-size: 16px;
     color: #555;
     line-height: 2;
   }
@@ -135,7 +138,7 @@
   }
   
   .form-section h2 {
-    font-size: 28px;
+    font-size: 24px;
     color: orangered;
     text-align: center;
     margin-bottom: 40px;
@@ -144,13 +147,13 @@
   form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     max-width: 600px;
     margin: 0 auto;
   }
   
   form label {
-    font-size: 20px;
+    font-size: 16px;
     color: #555;
     font-weight: bold;
   }
@@ -160,8 +163,8 @@
   form input[type="tel"],
   form select,
   form textarea {
-    padding: 18px;
-    font-size: 18px;
+    padding: 14px;
+    font-size: 14px;
     border: 2px solid #ccc;
     border-radius: 8px;
     outline: none;
@@ -177,11 +180,11 @@
   }
   
   form button {
-    padding: 15px;
+    padding: 14px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     border-radius: 8px;
@@ -203,7 +206,7 @@
   
   .file-input-container label {
     font-size: 16px;
-    color: #333;
+    color: #555;
     margin-bottom: 5px; /* Spacing between label and input */
   }
   
@@ -213,12 +216,12 @@
   
   .custom-file-input {
     display: inline-block;
-    padding: 12px 20px;
+    padding: 10px 20px;
     color: white;
     border: none;
     border: 2px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
   }
@@ -246,20 +249,20 @@
   }
   
   .faq-section h2 {
-    font-size: 28px;
+    font-size: 24px;
     color: orangered;
     text-align: center;
     margin-bottom: 40px;
   }
   
   .faq-item h3 {
-    font-size: 20px;
+    font-size:18px;
     color: #333;
     margin-bottom: 10px;
   }
   
   .faq-item p {
-    font-size: 16px;
+    font-size: 14px;
     color: #555;
     margin-bottom: 20px;
     line-height: 1.6;
@@ -275,13 +278,13 @@
   }
   
   .contact-section h2 {
-    font-size: 28px;
+    font-size: 24px;
     color: orangered;
     margin-bottom: 20px;
   }
   
   .contact-section p {
-    font-size: 18px;
+    font-size: 16px;
     color: #555;
   }
   

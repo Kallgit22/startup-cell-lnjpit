@@ -1,0 +1,89 @@
+.blog-container {
+    max-width: 940px;
+    margin: 100px auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .blog-title {
+    font-size: 1.7rem;
+    margin-bottom: 40px;
+  }
+  
+  .blog-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .blog-content {
+    font-size: .9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .blog-meta {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .blog-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .like-button, .share-button {
+    padding: 8px 13px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size:.8rem;
+    border-radius: 5px;
+  }
+  
+  .like-button:hover, .share-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .comment-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 0;
+  }
+  
+  .comment-list li {
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .comment-form {
+    margin-top: 20px;
+  }
+  
+  .comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .comment-form button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  
+  .comment-form button:hover {
+    background-color: #218838;
+  }
+  

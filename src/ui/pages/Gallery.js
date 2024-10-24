@@ -238,29 +238,7 @@ export default function Gallery() {
   };
 
   const imageList = [
-    { image: "/images/startup-poster.jpg" },
-    {
-      image:
-        "/images/backgrounds/startup-mahakumbh-to-tell-the-world-that-spring-is-coming.webp",
-    },
-    {
-      image:
-        "/images/backgrounds/Startup_Mahakumbh_PM_Narendra_Modi_ecosystem_1710915148775_1710915148910.webp",
-    },
-    { image: "/images/startup-poster.jpg" },
-    {
-      image:
-        "/images/backgrounds/startup-mahakumbh-to-tell-the-world-that-spring-is-coming.webp",
-    },
-    { image: "/images/startup-poster.jpg" },
-    {
-      image:
-        "/images/backgrounds/startup-mahakumbh-to-tell-the-world-that-spring-is-coming.webp",
-    },
-    {
-      image:
-        "/images/backgrounds/Startup_Mahakumbh_PM_Narendra_Modi_ecosystem_1710915148775_1710915148910.webp",
-    },
+   
     { image: "/images/startup-poster.jpg" },
     {
       image:
@@ -334,6 +312,7 @@ export default function Gallery() {
         <video
           ref={videoRef}
           src="/videos/Shiva Shambho_ Most Watched Bharatanatyam Dance _ Best of Indian Classical Dance.mp4"
+          autoPlay
           muted={isMuted} // Apply the mute state to the video
         ></video>
         <div className="gallery-bottom-bar">
@@ -364,7 +343,6 @@ export default function Gallery() {
         <img className="left-cloud" src="/images/cloud.png" alt="" />
         <img className="right-cloud" src="/images/cloud.png" alt="" />
       </section>
-
       <section className="gallery-context-section">
         <h1>Welcome to Gallery</h1>
         <div className="gallery-info">
@@ -456,10 +434,10 @@ export default function Gallery() {
           </div>
         </div>
         <div className="search-album-wrapper">
-          <h1>Search Album</h1>
+          <h2>Search Album</h2>
           <div className="search-bar-container">
             <div>
-              <h3>Event Name</h3>
+              <h4>Event Name</h4>
               <select
                 name="eventName"
                 value={filters.eventName}
@@ -474,7 +452,7 @@ export default function Gallery() {
               </select>
             </div>
             <div>
-              <h3>Event Year</h3>
+              <h4>Event Year</h4>
               <select
                 name="year"
                 value={filters.year}
@@ -489,7 +467,7 @@ export default function Gallery() {
               </select>
             </div>
             <div>
-              <h3>Event Month</h3>
+              <h4>Event Month</h4>
               <select
                 name="month"
                 value={filters.month}

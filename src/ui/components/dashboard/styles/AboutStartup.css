@@ -2,7 +2,7 @@
   background-image: url("/public/images/backgrounds/pngtree-city-__cartoon-building-gradient-background-picture-image_1964569.jpg");
   background-size: cover;
   background-position: center;
-  padding: 30px;
+  padding: 20px;
   margin-top: 10px;
   color: white;
   min-height: 70vh;
@@ -14,13 +14,13 @@
 h1 {
   color: rgb(20, 20, 19);
   position: relative;
-  padding: 20px;
-  font-size: 3em;
+  padding: 10px;
+  font-size: 2em;
 }
 
 .content {
   display: flex;
-  gap: 30px;
+  gap: 10px;
   margin-top: 5px;
   padding-bottom: 10px;
 }
@@ -31,13 +31,9 @@ h1 {
 .steps ul {
   color: black;
 }
-.steps h2 {
-  color: black;
-  margin-bottom: 10px;
-  font-size: 32px;
-}
 
 .steps ul {
+  width: 200px;
   display: flex;
   flex-direction: column;
   list-style-type: none;
@@ -45,7 +41,7 @@ h1 {
 }
 
 .steps li {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .steps li span {
@@ -57,7 +53,7 @@ h1 {
   transition: color 0.3s ease;
   border-bottom: 1px solid #2a2828;
   padding: 10px 0;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .steps li a:hover {
@@ -67,19 +63,20 @@ h1 {
   display: flex;
 }
 .box {
-  height: 15px;
-  width: 1px;
+  display: flex;
+  border-left: 10px solid #e1541d;
+}
 
-  background-color: #e1541d;
-  border-radius: 5%;
-  margin: 10px;
-  padding: 20px;
+.box h2{
+  margin: 0;
+  padding: 0;
+  color: black;
 }
 .image-explore {
   display: flex;
   flex-direction: column;
   margin-left: 100px;
-  padding: 90px;
+  padding: 20px;
 }
 .explore-section {
   display: flex;
@@ -108,12 +105,12 @@ h1 {
 
 .startup-info-card-section .startup-info-cards {
   display: flex;
-  gap: 40px;
+  gap: 20px;
   justify-content: space-between;
 }
 .startup-info-cards .card {
-  height: 350px;
-  width: 250px;
+  height: 300px;
+  width: 220px;
   border-color: rgb(19, 18, 18);
   border-width: 20px;
   background-color: white;
@@ -122,9 +119,9 @@ h1 {
   border: 1px solid rgb(4, 4, 4);
 }
 
-.card h3{
+.card h3 {
   color: orangered;
   font-weight: bold;
-  font-size: 23px;
+  font-size:18px;
   text-align: center;
 }

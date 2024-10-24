@@ -13,7 +13,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-section">
-        <p>Developer Contact: <a href="mailto:developer@example.com">rishabhraj1130jnvbgp@gmail.com</a></p>
+        <p>Developer Contact: <a href="mailto:developer@example.com">startupcell@developer.com</a></p>
       </div>
     </footer>
   );

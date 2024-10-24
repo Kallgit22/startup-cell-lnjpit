@@ -1,32 +1,15 @@
 import React from "react";
 import "../styles/Testimonial.css";
 
-export default function Testimonial() {
+export default function Testimonial({data}) {
   return (
     <div className="testimonial-slide">
       <div className="testimonial-author-data">
-        <img src="/images/Mithilesh-Singh.jpg" alt="" />
-        <h2>Dr. Mithilesh Kumar Singh</h2>
-        <h3>Principal, LNJPIT Chapra</h3>
-        <h5>Other details</h5>
+        <img src={data.image_src} alt="" />
+        <h2>{data.name}</h2>
+        <h3>{data.designation}</h3>
       </div>
-      <div className="testimonial-text-container">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-          voluptatum maiores sequi deleniti odio illo excepturi similique
-          provident assumenda dolorem dicta optio non error, omnis, corrupti
-          magni perspiciatis suscipit voluptatibus!
-          <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-          voluptatum maiores sequi deleniti odio illo excepturi similique
-          provident assumenda dolorem dicta optio non error, omnis, corrupti
-          magni perspiciatis suscipit voluptatibus!
-          <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-          voluptatum maiores sequi deleniti odio illo excepturi similique
-          provident assumenda dolorem dicta optio non error, omnis, corrupti
-          magni perspiciatis suscipit voluptatibus!
-        </p>
+      <div className="testimonial-text-container" dangerouslySetInnerHTML={{ __html: data.testimonial }}>
       </div>
     </div>
   );
