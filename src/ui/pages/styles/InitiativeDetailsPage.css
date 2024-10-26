@@ -1,0 +1,291 @@
+.initiative-details-banner-section {
+  width: 100%;
+  height: 75vh;
+  background-image: url(/public/images/backgrounds/startup-mahakumbh-to-tell-the-world-that-spring-is-coming.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.initiative-details-about-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url(/public/images/backgrounds/abstract-gradient-marketing-flyer-business-card-website-poster-brochure-white-background_603278-44.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.initiative-details-about-section .title-box {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/public/images/backgrounds/Rectangle\ 58.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.title-box h1 {
+  font-size: 42px;
+  background: linear-gradient(
+    45deg,
+    #f06,
+    #f06,
+    #00f,
+    #0ff
+  ); /* Text gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Webkit mask for text */
+  -webkit-mask-image: linear-gradient(45deg, #f06, #f06, #00f, #0ff);
+  -webkit-mask-clip: text;
+  -webkit-mask-composite: destination-in;
+}
+
+.initiative-details-about-section .content-box {
+  width: 50%;
+  margin-right: 10%;
+  border-top: 3px dashed rgba(0, 117, 255, 0.52);
+  box-shadow: 0px 3px 6px rgba(0, 117, 255, 0.52),
+    0px 3px 6px rgba(0, 117, 255, 0.52);
+  box-sizing: border-box;
+  padding: 20px;
+  font-size: 18px;
+  background-color: white;
+}
+
+.initiative-details-vision-section {
+  width: 100%;
+  min-height: 80vh;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.initiative-details-vision-section .vision-details-heading-box {
+  width: 80%;
+  height: 135px;
+  display: flex;
+  gap: 20px;
+}
+
+.vision-details-heading-box .verticle-bar-grad {
+  width: 28px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 61, 0, 1), rgba(0, 0, 0, 1));
+  border-radius: 5px;
+}
+
+.vision-details-heading-box h1 {
+  font-size: 66px;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    45deg,
+    black,
+    rgba(0, 117, 255, 1)
+  ); /* Text gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Webkit mask for text */
+  -webkit-mask-image: linear-gradient(45deg, black, rgba(0, 117, 255, 1));
+  -webkit-mask-clip: text;
+  -webkit-mask-composite: destination-in;
+}
+
+.vision-details-heading-box h3 {
+  font-size: 56px;
+  font-weight: bolder;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    45deg,
+    black,
+    rgba(0, 117, 255, 1)
+  ); /* Text gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Webkit mask for text */
+  -webkit-mask-image: linear-gradient(45deg, black, rgba(0, 117, 255, 1));
+  -webkit-mask-clip: text;
+  -webkit-mask-composite: destination-in;
+}
+
+.initiative-details-vision-section .initiative-vision-details-box {
+  width: 70%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 50px 20px;
+  margin-top: 50px;
+}
+
+.initiative-details-vision-section .vision-section-bottom-bar-design {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  width: 120px;
+  height: 28px;
+  background: linear-gradient(180deg, rgba(255, 61, 0, 1), rgba(0, 0, 0, 1));
+  border-radius: 5px;
+}
+
+.initiative-details-forwhoom-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  gap: 10%;
+  align-items: center;
+  margin-top: 100px;
+  background-image: url(/public/images/backgrounds/black-wavy-lines-abstract-background_78370-2991.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.initiative-details-forwhoom-section .title-box {
+  width: 300px;
+  height: 450px;
+  background-image: url(/public/images/backgrounds/Group\ 128.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  background-color: white;
+  margin-left: 50px;
+}
+
+.initiative-details-forwhoom-section .content-box {
+    width: 60%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: white; /* Base color */
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .initiative-details-forwhoom-section .content-box::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 183, 255, 0.06); /* Overlay color */
+    border-radius: 20px; /* Ensure the overlay matches the border radius */
+    pointer-events: none; /* Ensures clicks go through to .content-box */
+    z-index: 1; /* Keep overlay on top */
+  }
+
+
+.initiative-details-guideline-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.initiative-details-guideline-section .guidline-title-box {
+  width: 300px;
+  height: 80px;
+  background: linear-gradient(
+    to right,
+    rgba(229, 119, 58, 0.5),
+    rgba(0, 183, 255, 0.3)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  border-radius: 5px;
+  margin-top: 100px;
+}
+
+.guidline-title-box h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.initiative-details-guideline-section .content-box {
+  width: 80%;
+  align-self: center;
+  background-color: rgba(255, 61, 0, 0.05);
+  box-shadow: 0px 3px 6px rgba(0, 117, 255, 0.52),
+    0px 3px 6px rgba(0, 117, 255, 0.52);
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+.initiative-details-apply-section {
+  width: 100%;
+  min-height: 70vh;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.initiative-details-apply-section .apply-section-heading {
+  width: 25%;
+  height: auto;
+  background-image: url(/public/images/backgrounds/Group_129.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.initiative-details-apply-section .apply-section-steps {
+  width: 60%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  box-sizing: border-box;
+  padding:20px;
+  flex-direction: column;
+  gap: 0;
+  transition: all 1s ease;
+}
+
+.initiative-details-apply-section .visible{
+    height: auto;
+}
+
+.apply-section-steps button {
+  padding: 10px 20px;
+  width: 150px;
+  border-radius: 5px;
+  background-color: orangered;
+  color: white;
+  font-weight: 600;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.apply-section-steps button:hover {
+  background-color: white;
+  color: orangered;
+  border: 2px solid orangered;
+  font-weight: 600;
+  box-shadow: 0 0 10px 3px rgba(240, 79, 5, 0.5),
+    0 0 10px 3px rgba(255, 215, 0, 0.5);
+}
+
+
+
+.initiative-details-faqs-section{
+    width: 100%;
+    margin-top: 100px;
+}

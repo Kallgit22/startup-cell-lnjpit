@@ -1,12 +1,32 @@
-import { useEffect, useState } from 'react'
-import { getNotifications } from '../apis/AppContentAPI';
+import { useEffect, useState } from "react";
+import {
+  getGuests,
+  getInitiatives,
+  getNotifications,
+} from "../apis/AppContentAPI";
 
 export default function DashboardContainer() {
   const [posters, setPosters] = useState(null);
   const [notice, setNotice] = useState(null);
   const [mentors, setMentors] = useState(null);
+  const [guests, setGuests] = useState(null);
+  const [initiatives, setInitiatives] = useState(null);
 
-  useEffect(()=>{
+  useEffect(() => {
+    if (guests != null) {
+      // Filter for mentors
+      const filteredMentors = guests.filter((item) => item.type === "Mentor");
+      console.log("Mentors:", filteredMentors);
+      setMentors(filteredMentors);
+
+      // Filter for guests
+      const filteredGuests = guests.filter((item) => item.type === "Guest");
+      console.log("Guests:", filteredGuests);
+      // You can set guests if needed, but this might be redundant
+    }
+  }, [guests]);
+
+  useEffect(() => {
     setPosters([
       "/images/startup-poster.jpg",
       "/images/backgrounds/startup-mahakumbh-to-tell-the-world-that-spring-is-coming.webp",
@@ -15,24 +35,24 @@ export default function DashboardContainer() {
       "/images/backgrounds/hashstudioz-at-startup-mahakumbh-expo.webp",
     ]);
 
-    try {
-      Promise.all([getNotifications()]).then(function (results) {
+    Promise.all([getNotifications(), getInitiatives(), getGuests()])
+      .then(function (results) {
         const Notifications = results[0].data;
+        const Initiatives = results[1].data;
+        const Guests = results[2].data;
+        setGuests(Guests); // Correct state variable name
         setNotice(Notifications);
-        console.log(Notifications)
+        setInitiatives(Initiatives);
+      })
+      .catch((error) => {
+        console.log(error);
       });
-    } catch (error) {
-      console.log(error);
-    }
+  }, []);
 
-  },[]);
-
-  return (
-    {
-      posters,
-      notice,
-      mentors
-    }
-  )
+  return {
+    posters,
+    notice,
+    mentors,
+    initiatives,
+  };
 }
-

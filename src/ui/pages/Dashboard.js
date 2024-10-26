@@ -14,8 +14,8 @@ export default function Dashboard() {
     }
   };
 
-  const {notice} = DashboardContainer()
-  
+  const { notice, initiatives, mentors } = DashboardContainer();
+
   const posters = useMemo(
     () => [
       "/images/startup-poster.jpg",
@@ -36,9 +36,13 @@ export default function Dashboard() {
         notices={notice}
         onclickExplore={() => handleScrolling("initiative-container")}
       />
-      <Initiative className={"initiative-container"} />
+      {initiatives != null ? (
+        <Initiative className={"initiative-container"} data={initiatives} />
+      ) : (
+        ""
+      )}
       <AboutStartup />
-      <Mentors />
+      {mentors != null ? <Mentors mentorData={mentors} /> : ""}
       <ContactForm />
     </div>
   );

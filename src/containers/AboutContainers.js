@@ -3,14 +3,27 @@ import PropTypes from "prop-types";
 import { getMemberList, getTestimonials } from "../apis/AppContentAPI";
 
 export default function AboutContainers({ section }) {
-  const [currentSlide, setCurrentSlide] = useState(0);
+ 
   const [memberData, setMemberData] = useState(null);
+  const [sortedmemberData, setSortedMemberData] = useState(null);
   const [testimonials, setTestimonials] = useState(null);
-  const membersPerSlide = 10;
+  
 
-  useEffect(()=>{
+  useEffect(() => {
+    if (memberData != null) {
+      const sortedData = memberData.sort((a, b) => {
+        return parseInt(a.category) - parseInt(b.category);
+      });
+
+     setSortedMemberData(sortedData)
+    }
+  }, [memberData]);
+
+  useEffect(() => {
     try {
-      Promise.all([getMemberList(),getTestimonials()]).then(function (results) {
+      Promise.all([getMemberList(), getTestimonials()]).then(function (
+        results
+      ) {
         const memberList = results[0].data;
         const testimonials = results[1].data;
         setMemberData(memberList);
@@ -19,22 +32,9 @@ export default function AboutContainers({ section }) {
     } catch (error) {
       console.log(error);
     }
-  },[]);
+  }, []);
 
-
-  const handleNext = () => {
-    setCurrentSlide(
-      (prev) => (prev + 1) % Math.ceil(memberData.length / membersPerSlide)
-    );
-  };
-
-  const handlePrev = () => {
-    setCurrentSlide(
-      (prev) =>
-        (prev - 1 + Math.ceil(memberData.length / membersPerSlide)) %
-        Math.ceil(memberData.length / membersPerSlide)
-    );
-  };
+ 
 
   useEffect(() => {
     if (section) {
@@ -46,12 +46,8 @@ export default function AboutContainers({ section }) {
   }, [section]);
 
   return {
-    currentSlide,
-    membersPerSlide,
-    memberData,
+    sortedmemberData,
     testimonials,
-    handleNext,
-    handlePrev,
   };
 }
 

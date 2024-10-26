@@ -12,6 +12,7 @@
   height: calc(100vh - 200px);
   display: flex;
   position: relative;
+  flex-direction: column;
   background-image: url(/public/images/backgrounds/person-think.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,6 +29,7 @@
   gap: 10px;
 }
 
+
 .poster-heading h1 {
   font-size: 5rem;
   margin: 0;
@@ -40,96 +42,115 @@
   background-color: orangered;
 }
 
+.about-us-main-poster-section .poster-message-content{
+  margin-left: 8%;
+  margin-top: 1%;
+  width: 40%;
+  font-size: 18px;
+}
+
 .about-us-startup-cell-section {
   width: 100%;
-  height: 80vh;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 100px;
-  background-image: url(/public/images/backgrounds/rocket-back.png);
+  background-image: url(/public/images/backgrounds/transparent-wavy-lines-white-backgroundabstract-waves-background_206325-1986.avif);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
   box-sizing: border-box;
   padding: 20px;
 }
 
 .about-us-startup-cell-section .about-us-details {
+  width: 100%;
   display: flex;
+  justify-content: space-evenly;
   margin-left: 30px;
+  margin-top: 50px;
 }
 
-.about-us-details h2 {
-  width: 45%;
-  font-size: 18px;
+.about-us-details .details-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  height: 300px;
+  border-radius: 5px;
+  margin-top: 30px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  /* Gradient border trick */
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(45deg, #f06, #00f, #0ff) border-box;
+  border: 4px solid transparent;
+
+  box-shadow: 0 0 10px 3px rgba(76, 208, 235, 0.5),
+    0 0 10px 3px rgba(0, 0, 255, 0.5);
+}
+
+.about-us-details .details-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px; /* Ensure it matches the parent’s border-radius */
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0)
+  );
+  z-index: 1;
+  pointer-events: none; /* Allow interaction with the card */
+}
+
+.details-card p {
+  color: black;
 }
 
 .about-us-mission-section {
   width: 100%;
+  height: 100vh;
   display: flex;
+  background-image: url(/public/images/backgrounds/black-wavy-lines-abstract-background_78370-2991.avif);
   flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
   align-items: center;
   gap: 20px;
 }
 
-.about-us-mission-section .mission-section-heading {
-  width: 100%;
-  margin-left: 8%;
-}
-.about-us-mission-section .mission-box {
-  width: 90%;
-  border: 3px solid skyblue;
-  border-radius: 10px;
+.about-us-mission-section .mission-details {
   display: flex;
-  justify-content: space-between;
   position: relative;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 30px;
+  gap: 40px;
 }
 
-.mission-box .mission-logo {
-  width: 40%;
+.mission-details .mission-details-circle {
+  width: 120px;
+  height: 120px;
   display: flex;
+  justify-content: center;
   align-items: center;
-}
-
-.mission-logo img {
-  width: 150px;
-  height: 150px;
+  background-color: white;
   border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
-.mission-box .mission-details {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.mission-details .mission-details-circle:hover {
+  box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.25),
+    0px 10px 10px rgba(0, 0, 0, 0.22);
+  transition: all 0.5s ease;
 }
 
-.mission-details .mission-details-heading {
-  width: 100%;
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-}
-
-.mission-details-heading .verticle-line {
-  width: 15px;
-  height: 25px;
-  background-color: orangered;
-}
-
-.mission-details-heading h2 {
-  font-size: 18px;
-  text-shadow: 0 0 2px #0099ff, 0 0 3px #0000ff;
-  margin: 0;
-  padding: 0;
-}
-
-.mission-details b {
-  width: 80%;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 2dp;
-}
 
 .about-us-team-section {
   position: relative; /* Required for the pseudo-element to be positioned relative to this container */
@@ -179,86 +200,59 @@
   font-size: 32px;
 }
 
-.about-us-team-section .team-slider-wrapper {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  z-index: 4;
-  box-sizing: border-box;
-  padding-left: 50px;
-  padding-right: 50px;
+
+.about-us-team-section .team-list-container {
+  width: 75%;
+  height: 500px;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  grid-template-rows: repeat(5,auto);
 }
 
-.team-slider-wrapper .slider-container {
+
+
+.about-us-testimonial-section {
+  width: 100%;
+  height: 80vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: transform 0.5s ease;
-}
-
-.slider-container .arrow-icon-right {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  z-index: 4;
-}
-
-.slider-container .arrow-icon-left {
-  transform: rotate(180deg);
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  z-index: 4;
-}
-
-.slide-container {
-  display: grid;
-  grid-template-columns: repeat(5, 0fr); /* 4 columns */
-  grid-template-rows: repeat(2, 0fr); /* 2 rows */
-  grid-row-start: 1;
-  grid-row-end: 3;
-  gap: 70px 30px; /* Adjust the gap between items */
+  box-sizing: border-box;
   padding: 20px;
+  background-image: url(/public/images/backgrounds/design-element-wavy.avif);
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.about-us-testimonial-section{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 20px;
-    background-color: #006E99;
-    margin-top: 100px;
+.slick-slide {
+  box-shadow: none; /* Remove shadow from the slides */
 }
 
-.about-us-testimonial-section .testimonial-slider{
-    position: relative;
-    display: flex;
-    width: 80%;
-    max-width: 1400px;
-    box-sizing: border-box;
-    padding: 20px;
+.about-us-testimonial-section .testimonial-slider {
+  width: 70%;
+  box-shadow: none;
 }
 
-.about-us-help-section{
-    width: 100%;
-    min-height: 90vh;
-    background-image: url(/public/images/backgrounds/rocket-back-help.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-top: 100px;
-    display: flex;
-    justify-content: space-between;
+.about-us-help-section {
+  width: 100%;
+  min-height: 90vh;
+  background-image: url(/public/images/backgrounds/rocket-back-help.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.about-us-help-section .faq-menu{
-    width: 50%;
-    display: flex;
-    box-sizing: border-box;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
+.about-us-help-section .faq-menu {
+  width: 50%;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
 }

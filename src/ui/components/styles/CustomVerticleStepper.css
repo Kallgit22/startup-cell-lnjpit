@@ -1,0 +1,72 @@
+.custom-verticle-stepper-wrapper{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.custom-verticle-stepper-wrapper .stepper-bar{
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.custom-verticle-stepper-wrapper .stepper-bar .stepper-bar-dot{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: navy;
+}
+
+.custom-verticle-stepper-wrapper .stepper-bar .stepper-bar-rod{
+    width: 4px;
+    height: 100%;
+    background-color: navy;
+    position: absolute;
+}
+
+.stepper-bar .stepper-bar-arrow{
+    width: 15px;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(5px) translateX(-5px);
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: flex;
+}
+
+.stepper-bar-arrow .arrow-left-bar{
+    width: 4px;
+    height: 15px;
+    transform: rotate(135deg) translateX(-3px) translateY(-5px);
+    background-color: navy;
+
+}
+
+.stepper-bar-arrow .arrow-right-bar{
+    width: 4px;
+    height: 15px;
+    transform: rotate(-135deg) translateX(-8px) translateY(6px);
+    background-color: navy;
+}
+
+.custom-verticle-stepper-wrapper .stepper-details{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.custom-verticle-stepper-wrapper .stepper-details .stepper-details-heading{
+    color: #FF3D00;
+}
+
+

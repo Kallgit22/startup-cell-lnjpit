@@ -13,6 +13,7 @@ import Initiative from "./ui/pages/Initiative";
 import Gallery from "./ui/pages/Gallery";
 import IdeaRegistrationPage from "./ui/pages/IdeaRegistrationPage";
 import BlogDetail from "./ui/pages/BlogDetail";
+import InitiativeDetailsPage from "./ui/pages/InitiativeDetailsPage";
 
 function App() {
   const windowWidth = useWindowWidth(); // Get the current window width
@@ -31,6 +32,7 @@ function App() {
           />
           <Route path="/blogs/:section?" element={<Blog />} />
           <Route path="/blog-detail" element={<BlogDetail />} />
+          <Route path="/initiative/:id?" element={<InitiativeDetailsPage />} />
         </Routes>
         <BottomBar />
         <Footer />

@@ -1,7 +1,13 @@
 import React from "react";
 import "../dashboard/styles/Initiative.css";
+import { useNavigate } from "react-router-dom";
 
 const Initiative = ({ data, className }) => {
+
+  const navigate = useNavigate();
+  const handleClick = (id)=>{
+    navigate(`/initiative/${id}`)
+  }
   return (
     <div className={className}>
       <h1 className="topic">Our Initiative</h1>
@@ -20,68 +26,22 @@ const Initiative = ({ data, className }) => {
 
       <div className="smart-slider-wrapper">
         <div className="smart-slider">
-          <div className="smart-slide">
-            <img src="/images/startup-poster.jpg" alt="Outreach Program" />
-            <div className="overlay"></div>
-            <h1>Outreach Program</h1>
-            <div className="slide-details">
-              <b>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                veritatis praesentium nihil nesciunt modi tempore, corrupti
-                vitae necessitatibus ipsa quae deserunt, fuga itaque dicta animi
-                odio perferendis. Corrupti, amet ipsum!
-              </b>
-              <button>Know More</button>
+          {data.map((initiative, index) => (
+            <div key={index} className="smart-slide">
+              <img
+                src="/images/startup-poster.jpg"
+                alt="Startup Internship Program"
+              />
+              <div className="overlay"></div>
+              <h1>{initiative.title}</h1>
+              <div className="slide-details">
+                <b>
+                {initiative.description}
+                </b>
+                <button onClick={()=>{handleClick(initiative.id)}}>Know More</button>
+              </div>
             </div>
-          </div>
-          <div className="smart-slide">
-            <img src="/images/startup-poster.jpg" alt="Start Vyapar" />
-            <div className="overlay"></div>
-            <h1>Start Vyapar</h1>
-            <div className="slide-details">
-              <b>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                veritatis praesentium nihil nesciunt modi tempore, corrupti
-                vitae necessitatibus ipsa quae deserunt, fuga itaque dicta animi
-                odio perferendis. Corrupti, amet ipsum!
-              </b>
-              <button>Know More</button>
-            </div>
-          </div>
-          <div className="smart-slide">
-            <img
-              src="/images/startup-poster.jpg"
-              alt="Startup Internship Program"
-            />
-            <div className="overlay"></div>
-            <h1>Startup Internship Program</h1>
-            <div className="slide-details">
-              <b>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                veritatis praesentium nihil nesciunt modi tempore, corrupti
-                vitae necessitatibus ipsa quae deserunt, fuga itaque dicta animi
-                odio perferendis. Corrupti, amet ipsum!
-              </b>
-              <button>Know More</button>
-            </div>
-          </div>
-          <div className="smart-slide">
-            <img
-              src="/images/startup-poster.jpg"
-              alt="Startup Internship Program"
-            />
-            <div className="overlay"></div>
-            <h1>Startup Internship Program</h1>
-            <div className="slide-details">
-              <b>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                veritatis praesentium nihil nesciunt modi tempore, corrupti
-                vitae necessitatibus ipsa quae deserunt, fuga itaque dicta animi
-                odio perferendis. Corrupti, amet ipsum!
-              </b>
-              <button>Know More</button>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

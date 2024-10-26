@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./styles/Initiative.css";
 import InitiativeInfoBox from "../components/InitiativeInfoBox";
-import InitiativeDetails from "../components/InitiativeDetails";
+import InitiativeContainer from "../../containers/InitiativeContainer";
 
 export default function Initiative() {
-  const [activeTab, setActiveTab] = useState(0);
-
-
   const { section } = useParams();
+  const navigation = useNavigate();
+
+  const { initiatives } = InitiativeContainer();
 
   useEffect(() => {
     if (section) {
@@ -19,74 +19,9 @@ export default function Initiative() {
     }
   }, [section]);
 
-
-  const initiativeData = [
-    {
-      title: "Outreach Program",
-      details: {
-        introduction: {
-          1: "Outreach introduction text...",
-          2: "More introduction text...",
-          3: "Further information...",
-        },
-        whoApply: {},
-        howApply: {},
-        benifitImpact: {
-          1: "Benefit 1...",
-          2: "Benefit 2...",
-          3: "Benefit 3...",
-        },
-      },
-    },
-    {
-      title: "Start Vyapar",
-      details: {
-        introduction: {
-          1: "Vyapar introduction...",
-          2: "More info about Vyapar...",
-        },
-        whoApply: {
-          1: "Who can apply to Vyapar 1...",
-          2: "Who can apply to Vyapar 2...",
-        },
-        howApply: {
-          1: "How to apply 1...",
-          2: "How to apply 2...",
-        },
-        benifitImpact: {
-          1: "Vyapar benefit 1...",
-          2: "Vyapar benefit 2...",
-        },
-      },
-    },
-    {
-      title: "Startup Internship Yojna",
-      details: {
-        introduction: {
-          1: "Internship Yojna introduction...",
-          2: "More introduction...",
-        },
-        whoApply: {
-          1: "Who can apply for Internship...",
-        },
-        howApply: {
-          1: "How to apply for Internship 1...",
-          2: "How to apply for Internship 2...",
-        },
-        benifitImpact: {
-          1: "Internship Benefit 1...",
-          2: "Internship Benefit 2...",
-        },
-      },
-    },
-  ];
-
-  const [tabData, setTabData] = useState(initiativeData[0]);
-
-  // Set tab data whenever activeTab changes
-  useEffect(() => {
-    setTabData(initiativeData[activeTab]);
-  }, [activeTab]);
+  const handleClick = (id) => {
+    navigation(`/initiative/${id}`);
+  };
 
   return (
     <div className="initiative-page">
@@ -96,40 +31,72 @@ export default function Initiative() {
           <br />
           Initiatives
         </h1>
-        <h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae sunt sed repellat saepe omnis, officiis laborum cupiditate eius nisi quod! Deleniti nemo provident iste repellat tenetur voluptatibus odit voluptate et!
-        </h3>
+        <p>
+          At <strong>Startup Cell LNJPIT</strong>, we aim to ignite the
+          entrepreneurial spirit in students by providing the resources,
+          guidance, and opportunities needed to turn ideas into reality. Our
+          mission is to nurture creativity, foster innovation, and support
+          startups at every stage of their journey, empowering the next
+          generation of successful entrepreneurs.
+        </p>
       </section>
 
       <section className="initiative-context-section impact">
         <h1>About Initiatives</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione necessitatibus sed voluptatum fuga rem, quo, enim minima iste nobis illo debitis a cupiditate sint!
+          At <strong>Startup Cell LNJPIT</strong>, our initiatives are focused
+          on driving innovation and entrepreneurship among students. We offer a
+          range of programs and resources aimed at developing skills, providing
+          mentorship, and creating opportunities for young innovators. From
+          hands-on workshops to startup competitions, our goal is to empower
+          students to transform their ideas into thriving businesses and make a
+          real-world impact.
         </p>
         <div className="about-initiative-container">
-          <InitiativeInfoBox data={{ title: "BOOST IDEA" }} />
-          <InitiativeInfoBox data={{ title: "SCALE UP IDEA" }} />
-          <InitiativeInfoBox data={{ title: "RAISE FUND" }} />
+          <InitiativeInfoBox
+            data={{
+              title: "BOOST IDEA",
+              content:
+                "Join the Startup Cell to refine your business concept with expert mentorship. Experienced entrepreneurs will provide valuable feedback, helping you develop a solid business model and a compelling value proposition.",
+            }}
+          />
+          <InitiativeInfoBox
+            data={{
+              title: "SCALE UP IDEA",
+              content:
+                "Access resources and workshops designed to help you scale your business. Network with other entrepreneurs and industry leaders, and participate in pitch events to gain exposure and insights for growth.",
+            }}
+          />
+          <InitiativeInfoBox
+            data={{
+              title: "RAISE FUND",
+              content:
+                "While the Startup Cell doesn’t provide direct funding, it guides you in navigating funding opportunities. You'll learn how to prepare effective pitches and connect with platforms like Startup India and Startup Bihar to secure financial support for your startup.",
+            }}
+          />
         </div>
       </section>
 
-      <section className="initiative-tab-section program">
-        <div className="tab-bar-container">
-          {initiativeData.map((initiative, index) => (
-            <React.Fragment key={index}>
-              <div
-                className={`tab-bar ${activeTab === index ? "tab-active" : ""}`}
-                onClick={() => setActiveTab(index)}
-              >
-                <span>{initiative.title}</span>
-              </div>
-              {index < initiativeData.length - 1 && <div className="vertical-divider" style={{width:'3px',height:'auto',backgroundColor:'rgb(204, 226, 244)'}}></div>}
-            </React.Fragment>
-          ))}
-        </div>
-
-        <div className="tab-content">
-          <InitiativeDetails details={tabData.details} title={tabData.title} />
+      <section className="intiative-list-section program">
+        <h1>Our Initiatives</h1>
+        <div className="initiative-box-wrapper">
+          {initiatives != null
+            ? initiatives.map((data, index) => (
+                <div key={index} className="initiative-box elevation-2">
+                  <h4>{data.title}</h4>
+                  <div className="initiative-box-details">
+                    <p>{data.description}</p>
+                    <button
+                      onClick={() => {
+                        handleClick(data.id);
+                      }}
+                    >
+                      Know More
+                    </button>
+                  </div>
+                </div>
+              ))
+            : ""}
         </div>
       </section>
     </div>

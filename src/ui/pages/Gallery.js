@@ -3,230 +3,44 @@ import "./styles/Gallery.css";
 import { useParams } from "react-router-dom";
 import { HiMiniSpeakerWave } from "react-icons/hi2";
 import { HiMiniSpeakerXMark } from "react-icons/hi2";
+import GalleryContainer from "../../containers/GalleryContainer";
+import UniversalCustomDialog from "../components/UniversalCustomDialog";
 
 export default function Gallery() {
   const { section } = useParams();
   const videoRef = useRef(null); // To reference the video element
-  const [isMuted, setIsMuted] = useState(true); // Mute state
+  const [isMuted, setIsMuted] = useState(false); // Mute state
   const [volume, setVolume] = useState(0.5); // Volume state, default to 50%
-  const dummyAlbums = [
-    {
-      id: 1,
-      title: "Inauguration Ceremony",
-      year: "2023",
-      month: "January",
-      eventName: "Inauguration",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 2" },
-      ],
-    },
-    {
-      id: 2,
-      title: "Tech Fest 2023",
-      year: "2023",
-      month: "March",
-      eventName: "Tech Fest",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Tech Fest Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Tech Fest Image 2" },
-      ],
-    },
-    {
-      id: 3,
-      title: "Startup Meet",
-      year: "2022",
-      month: "May",
-      eventName: "Startup",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Startup Meet Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Startup Meet Image 2" },
-      ],
-    },
-    {
-      id: 4,
-      title: "Inauguration Ceremony",
-      year: "2023",
-      month: "January",
-      eventName: "Inauguration",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 2" },
-      ],
-    },
-    {
-      id: 5,
-      title: "Inauguration Ceremony",
-      year: "2023",
-      month: "January",
-      eventName: "Inauguration",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 2" },
-      ],
-    },
-    {
-      id: 6,
-      title: "Inauguration Ceremony",
-      year: "2023",
-      month: "January",
-      eventName: "Inauguration",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 2" },
-      ],
-    },
-    {
-      id: 7,
-      title: "Inauguration Ceremony",
-      year: "2023",
-      month: "January",
-      eventName: "Inauguration",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 2" },
-      ],
-    },
-    {
-      id: 8,
-      title: "Inauguration Ceremony",
-      year: "2023",
-      month: "January",
-      eventName: "Inauguration",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 2" },
-      ],
-    },
-    {
-      id: 9,
-      title: "Inauguration Ceremony",
-      year: "2023",
-      month: "January",
-      eventName: "Inauguration",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 2" },
-      ],
-    },
-    {
-      id: 10,
-      title: "Tech Fest 2023",
-      year: "2023",
-      month: "March",
-      eventName: "Tech Fest",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Tech Fest Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Tech Fest Image 2" },
-      ],
-    },
-    {
-      id: 11,
-      title: "Startup Meet",
-      year: "2022",
-      month: "May",
-      eventName: "Startup",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Startup Meet Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Startup Meet Image 2" },
-      ],
-    },
-    {
-      id: 12,
-      title: "Inauguration Ceremony",
-      year: "2023",
-      month: "January",
-      eventName: "Inauguration",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 2" },
-      ],
-    },
-    {
-      id: 13,
-      title: "Inauguration Ceremony",
-      year: "2023",
-      month: "January",
-      eventName: "Inauguration",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 2" },
-      ],
-    },
-    {
-      id: 14,
-      title: "Inauguration Ceremony",
-      year: "2023",
-      month: "January",
-      eventName: "Inauguration",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 2" },
-      ],
-    },
-    {
-      id: 15,
-      title: "Inauguration Ceremony",
-      year: "2023",
-      month: "January",
-      eventName: "Inauguration",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 2" },
-      ],
-    },
-    {
-      id: 16,
-      title: "Inauguration Ceremony",
-      year: "2023",
-      month: "January",
-      eventName: "Inauguration",
-      images: [
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 1" },
-        { url: "/images/startup-poster.jpg", alt: "Inauguration Image 2" },
-      ],
-    },
-  ];
+  const {
+    albums,
+    filters,
+    eventNames,
+    years,
+    months,
+    setFilters,
+    randomImageList,
+  } = GalleryContainer();
 
-  // Unique values for the dropdowns
-  const eventNames = [...new Set(dummyAlbums.map((album) => album.eventName))];
-  const years = [...new Set(dummyAlbums.map((album) => album.year))];
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+  const [openDialog, setOpenDialog] = useState(false);
+  const [selectedAlbum, setSelectedAlbum] = useState(null);
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 8; // Number of images to show per page
 
-  const [albums, setAlbums] = useState(dummyAlbums); // Albums state
-  const [filters, setFilters] = useState({
-    eventName: "",
-    year: "",
-    month: "",
-  });
+  const handleAlbumClick = (album) => {
+    console.log(album);
+    setSelectedAlbum(album);
+    setCurrentPage(0); // Reset to first page
+    setOpenDialog(true);
+  };
 
-  // Filter logic based on the selected filters
-  useEffect(() => {
-    const filteredAlbums = dummyAlbums.filter((album) => {
-      const matchesEvent = filters.eventName
-        ? album.eventName === filters.eventName
-        : true;
-      const matchesYear = filters.year ? album.year === filters.year : true;
-      const matchesMonth = filters.month ? album.month === filters.month : true;
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+    setSelectedAlbum(null);
+  };
 
-      return matchesEvent && matchesYear && matchesMonth;
-    });
-
-    setAlbums(filteredAlbums);
-  }, [filters]);
+  const totalPages = selectedAlbum
+    ? Math.ceil(selectedAlbum.album.length / itemsPerPage)
+    : 0;
 
   // Handle changes in the filters
   const handleFilterChange = (e) => {
@@ -236,43 +50,6 @@ export default function Gallery() {
       [name]: value,
     }));
   };
-
-  const imageList = [
-   
-    { image: "/images/startup-poster.jpg" },
-    {
-      image:
-        "/images/backgrounds/startup-mahakumbh-to-tell-the-world-that-spring-is-coming.webp",
-    },
-    { image: "/images/startup-poster.jpg" },
-    {
-      image:
-        "/images/backgrounds/startup-mahakumbh-to-tell-the-world-that-spring-is-coming.webp",
-    },
-    {
-      image:
-        "/images/backgrounds/Startup_Mahakumbh_PM_Narendra_Modi_ecosystem_1710915148775_1710915148910.webp",
-    },
-    { image: "/images/startup-poster.jpg" },
-    {
-      image:
-        "/images/backgrounds/startup-mahakumbh-to-tell-the-world-that-spring-is-coming.webp",
-    },
-    { image: "/images/startup-poster.jpg" },
-    {
-      image:
-        "/images/backgrounds/startup-mahakumbh-to-tell-the-world-that-spring-is-coming.webp",
-    },
-    {
-      image:
-        "/images/backgrounds/Startup_Mahakumbh_PM_Narendra_Modi_ecosystem_1710915148775_1710915148910.webp",
-    },
-    { image: "/images/startup-poster.jpg" },
-    {
-      image:
-        "/images/backgrounds/startup-mahakumbh-to-tell-the-world-that-spring-is-coming.webp",
-    },
-  ];
 
   useEffect(() => {
     if (section) {
@@ -313,6 +90,7 @@ export default function Gallery() {
           ref={videoRef}
           src="/videos/Shiva Shambho_ Most Watched Bharatanatyam Dance _ Best of Indian Classical Dance.mp4"
           autoPlay
+          loop
           muted={isMuted} // Apply the mute state to the video
         ></video>
         <div className="gallery-bottom-bar">
@@ -369,37 +147,26 @@ export default function Gallery() {
           </div>
           <div className="about-gallery">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-              libero quam excepturi sint, doloribus repellat adipisci non a.
-              Porro explicabo veniam esse molestias a excepturi, distinctio rem
-              accusantium delectus dolores?
+              Step into our vibrant world of innovation and creativity! Here at
+              the Startup Cell, we believe in showcasing the journey of our
+              young entrepreneurs and the milestones they've achieved. Our
+              gallery is a visual celebration of passion, collaboration, and
+              groundbreaking ideas that are shaping the future.
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-              libero quam excepturi sint, doloribus repellat adipisci non a.
-              Porro explicabo veniam esse molestias a excepturi, distinctio rem
-              accusantium delectus dolores? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Nesciunt libero quam excepturi sint,
-              doloribus repellat adipisci non a. Porro explicabo veniam esse
-              molestias a excepturi, distinctio rem accusantium delectus
-              dolores? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Nesciunt libero quam excepturi sint, doloribus repellat adipisci
-              non a. Porro explicabo veniam esse molestias a excepturi,
-              distinctio rem accusantium delectus dolores?
+              Explore images from workshops, events, and startup showcases where
+              students have transformed their visions into reality. You'll find
+              inspiring moments of teamwork, mentorship, and success that
+              reflect the spirit of our community.
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-              libero quam excepturi sint, doloribus repellat adipisci non a.
-              Porro explicabo veniam esse molestias a excepturi, distinctio rem
-              accusantium delectus dolores? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Nesciunt libero quam excepturi sint,
-              doloribus repellat adipisci non a. Porro explicabo veniam esse
-              molestias a excepturi, distinctio rem accusantium delectus
-              dolores? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Nesciunt libero quam excepturi sint, doloribus repellat adipisci
-              non a. Porro explicabo veniam esse molestias a excepturi,
-              distinctio rem accusantium delectus dolores?
+              Whether you're a budding entrepreneur, a mentor, or just curious
+              about the startup ecosystem, our gallery offers a glimpse into the
+              dynamic environment at LNJPIT Chapra. Join us in celebrating
+              creativity, entrepreneurship, and the incredible stories that
+              unfold here.
             </p>
+            <p>Dive in, get inspired, and be part of our journey!</p>
           </div>
         </div>
       </section>
@@ -408,28 +175,39 @@ export default function Gallery() {
           <div className="about-event-gallery">
             <h1>Event Gallery</h1>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste
-              sunt quas nulla quo dolor atque, fuga nesciunt, dolore et
-              reprehenderit numquam sint mollitia quos aperiam! Asperiores,
-              tenetur aliquam! Expedita, neque.
+              Welcome to our Event Gallery! Here, you’ll find a vibrant
+              collection of moments captured during our various events and
+              initiatives. From workshops and guest lectures to pitch
+              competitions and networking sessions, each image tells a story of
+              collaboration, learning, and innovation.
+            </p>
+            <p>
+              Our events are designed to empower aspiring entrepreneurs and
+              foster a community of creativity. Browse through the highlights
+              that showcase the enthusiasm, dedication, and teamwork of our
+              participants.
             </p>
           </div>
           <div className="upper-image-wrapper">
             <div className="image-slideshow">
-              {imageList.map((image, index) => (
-                <img
-                  className={`${index === 1 ? "active-image" : ""}`}
-                  key={index}
-                  src={image.image}
-                  alt=""
-                ></img>
-              ))}
+              {randomImageList != null
+                ? randomImageList.map((image, index) => (
+                    <img
+                      className={`${index === 1 ? "active-image" : ""}`}
+                      key={index}
+                      src={image}
+                      alt=""
+                    ></img>
+                  ))
+                : null}
             </div>
 
             <div className="slider-container">
-              {imageList.map((image, index) => (
-                <img key={index} src={image.image} alt=""></img>
-              ))}
+              {randomImageList != null
+                ? randomImageList.map((image, index) => (
+                    <img key={index} src={image} alt=""></img>
+                  ))
+                : null}
             </div>
           </div>
         </div>
@@ -485,25 +263,70 @@ export default function Gallery() {
 
           {/* Album list */}
           <div className="album-list">
-            {albums.length > 0 ? (
-              albums.map((album) => (
-                <div key={album.id} className="album-item">
-                  <h3>{album.title}</h3>
-                  <p>Year: {album.year}</p>
-                  <p>Month: {album.month}</p>
-                  <p>Event: {album.eventName}</p>
-                  <div className="album-thumbnails">
-                    {album.images.map((image, idx) => (
-                      <img key={idx} src={image.url} alt={image.alt} />
-                    ))}
+            {albums != null ? (
+              albums.length > 0 ? (
+                albums.map((album) => (
+                  <div
+                    key={album.id}
+                    className="album-item"
+                    onClick={() => handleAlbumClick(album)}
+                  >
+                    <h3>{album.title}</h3>
+                    <p>Year: {new Date(album.date).getFullYear()}</p>
+                    <p>
+                      Month:{" "}
+                      {new Date(album.date).toLocaleString("default", {
+                        month: "long",
+                      })}
+                    </p>
+                    <p>Event: {album.event_name}</p>
+                    <div className="album-thumbnails">
+                      {album.thumbnail.map((image, idx) => (
+                        <img key={idx} src={image} alt={image.alt} />
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))
+                ))
+              ) : (
+                <p>No albums found for the selected filters.</p>
+              )
             ) : (
-              <p>No albums found for the selected filters.</p>
+              ""
             )}
           </div>
         </div>
+        <UniversalCustomDialog
+          open={openDialog}
+          onClose={handleCloseDialog}
+          title={selectedAlbum ? `${selectedAlbum.title} - Images` : "Album"}
+          content={
+            selectedAlbum && (
+              <>
+                <div className="album-images">
+                  {selectedAlbum.album
+                    .slice(
+                      currentPage * itemsPerPage,
+                      (currentPage + 1) * itemsPerPage
+                    )
+                    .map((image, idx) => (
+                      <img key={idx} src={image} alt={`Album ${idx + 1}`} />
+                    ))}
+                </div>
+                <div className="pagination">
+                  {Array.from({ length: totalPages }, (_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentPage(index)}
+                      disabled={index === currentPage}
+                    >
+                      {index + 1}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )
+          }
+        />
       </section>
       <section className="cell-gallery-section"></section>
       <section className="college-gallery-section"></section>

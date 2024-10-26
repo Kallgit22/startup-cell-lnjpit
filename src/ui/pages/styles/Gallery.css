@@ -326,3 +326,44 @@
 .album-thumbnails img:hover {
   transform: scale(1.05); /* Slight zoom effect on hover */
 }
+
+
+.event-gallery-section .album-images{
+  display: grid;
+  grid-template-columns: repeat(4,  1fr);
+  gap: 10px;
+}
+
+.album-images img {
+  width: 100%; /* Full width of the grid item */
+  height: 250px; /* Maintain aspect ratio */
+  border-radius: 4px; /* Optional: rounded corners */
+  object-fit: cover; /* Cover the space without stretching */
+}
+
+.event-gallery-section .pagination {
+  display: flex;
+  justify-content: center; /* Center pagination */
+  margin-top: 20px; /* Space above pagination */
+  margin-bottom: 20px;
+}
+
+.pagination button {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin: 0 5px; /* Space between buttons */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.pagination button:disabled {
+  background-color: #cccccc; /* Grey color for disabled button */
+  cursor: not-allowed;
+}

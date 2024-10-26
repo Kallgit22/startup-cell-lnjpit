@@ -15,14 +15,14 @@
   padding: 0;
 }
 
-.initiative-poster-section h3 {
+.initiative-poster-section p {
   width: 30%;
   color: white;
   margin-left: 40px;
   margin: 20px 0px;
   padding: 0;
   font-weight: normal;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .initiative-context-section {
@@ -30,17 +30,20 @@
   display: flex;
   flex-direction: column;
   margin-top: 100px;
+  background-image: url(/public/images/backgrounds/abstract-gradient-marketing-flyer-business-card-website-poster-brochure-white-background_603278-44.avif);
   align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .initiative-context-section h1 {
   margin: 0;
-  color: #ff3d00;
 }
 
 .initiative-context-section p {
-  font-size: 20px;
-  width: 50%;
+  font-size: 18px;
+  width: 75%;
   text-align: center;
 }
 
@@ -53,68 +56,85 @@
   justify-content: space-evenly;
 }
 
-.initiative-tab-section {
+.intiative-list-section {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 15vh;
+  margin-top: 100px;
+}
+
+.intiative-list-section .initiative-box-wrapper {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  row-gap: 40px;
+}
+
+.initiative-box-wrapper .initiative-box{
+  width: 300px;
+  height: 150px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
   box-sizing: border-box;
   padding: 20px;
+  background-color: antiquewhite;
+  border-radius: 5px;
+  border: 2px solid gold;
+  box-shadow: 0 0 10px 3px rgba(255, 215, 0, 0.5),
+    0 0 10px 3px rgba(255, 215, 0, 0.5);
+  transition: all .3s ease;
 }
 
-.initiative-tab-section .tab-bar-container {
-  display: flex;
+.initiative-box:hover{
+  height: 250px;
+  justify-content: inherit;
+  align-items: center;
 }
 
-.tab-bar-container .verticle-devider {
-  width: 2px;
-  height: auto;
-  background-color: rgb(204, 226, 244);
+.initiative-box .initiative-box-details {
+  opacity: 0; /* Start hidden with opacity */
+  position: absolute;
+  transition: transform 0.5s ease; /* Add transitions for opacity and movement */
+  transform: translateY(20px); /* Move down slightly */
 }
 
-.tab-bar-container .tab-active {
-  border-bottom: 4px solid orangered;
-}
-
-.tab-bar-container .tab-bar {
-  box-sizing: border-box;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.tab-bar span {
-  font-size: 17px;
-  font-weight: bold;
-}
-
-.initiative-tab-section .tab-content {
+.initiative-box:hover .initiative-box-details {
   width: 100%;
+  opacity: 1; /* Fade in */
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-  padding: 20px;
+  align-items: center;
+  gap: 15px;
+  transform: translateY(0); /* Reset position */
+  bottom: 10px;
 }
 
-.initiative-details h1 {
-  color: #ff3d00;
-  font-size: 28px;
-  margin: 10px 0px;
-  padding: 0;
+.initiative-box-details p{
+  font-size: 12px;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.initiative-details {
-  width: 90%;
-  margin: 0px 5%;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: 20px;
+.initiative-box-details button{
+  width: 50%;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #ff3d00;
+  color: white;
+  border-radius: 5px;
 }
 
-.initiative-benefitImpact,
-.initiative-howApply,
-.initiative-introduction,
-.initiative-whoApply p {
-  font-size: 16px;
+.initiative-box-details button:hover{
+  background-color: #ff3c00d6;
+  box-shadow: 0 0 10px 3px rgba(240, 79, 5, 0.5),
+  0 0 10px 3px rgba(255, 215, 0, 0.5);
 }

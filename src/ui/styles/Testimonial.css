@@ -5,8 +5,11 @@
     position: relative;
     box-sizing: border-box;
     padding: 30px;
+    margin: 20px;
     border-radius: 10px;
     background-color: white;
+    box-shadow: 0 0 10px 3px rgba(76, 208, 235, 0.5),
+    0 0 10px 3px rgba(0, 0, 255, 0.5);
 }
 
 .testimonial-slide .testimonial-author-data{
@@ -22,6 +25,7 @@
     color: orangered;
     font-size: 22px;
     margin-top: 10px;
+    text-align: center;
 }
 
 .testimonial-author-data h3{
@@ -29,6 +33,7 @@
     padding: 0;
     font-size: 16px;
     margin-top: 5px;
+    text-align: center;
 }
 
 .testimonial-author-data h5{
@@ -47,7 +52,5 @@
 .testimonial-slide .testimonial-text-container{
     width: 60%;
     height: 100%;
-}
-.testimonial-text-container p{
     font-size: 18px;
 }
