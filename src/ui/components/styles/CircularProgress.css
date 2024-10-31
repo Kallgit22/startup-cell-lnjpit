@@ -1,0 +1,40 @@
+/* CircularProgress.css */
+svg {
+  display: block;
+  margin: auto;
+}
+
+circle {
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+/* Infinite rotation and stroke animation */
+.progress-ring {
+  animation: rotate 1s linear infinite, dash 1.5s ease-in-out infinite;
+  transform-origin: 50% 50%;
+  stroke-linecap: round;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 10 300; /* Start with a smaller arc, larger gap */
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 75 300; /* Expand to a larger arc, maintaining large gap */
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 10 300; /* Contract back to a smaller arc */
+    stroke-dashoffset: 0;
+  }
+}

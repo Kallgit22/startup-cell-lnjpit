@@ -42,7 +42,7 @@
 .gallery-bottom-bar .context-bar {
   background-color: white;
   width: 90%;
-  height:50px;
+  height: 50px;
   border-radius: 40px;
 }
 
@@ -327,10 +327,9 @@
   transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
-
-.event-gallery-section .album-images{
+.event-gallery-section .album-images {
   display: grid;
-  grid-template-columns: repeat(4,  1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 
@@ -366,4 +365,276 @@
 .pagination button:disabled {
   background-color: #cccccc; /* Grey color for disabled button */
   cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .gallery-page .galley-poster-section {
+    height: 45vh;
+    background-position: center;
+  }
+
+  .gallery-page video {
+    width: 80%;
+    height: auto;
+    top: 15%;
+    left: 10%;
+    border-radius: 10px;
+  }
+
+  .gallery-page .gallery-bottom-bar {
+    bottom: 40px;
+    width: 60%;
+    padding: 5px;
+    left: 20%;
+  }
+
+  .gallery-bottom-bar .context-bar {
+    width: 90%;
+    height: 30px;
+  }
+
+  .galley-poster-section .left-cloud {
+    width: 35%;
+    bottom: -5px;
+  }
+
+  .galley-poster-section .right-cloud {
+    width: 35%;
+    bottom: -5px;
+  }
+
+  .gallery-context-section {
+    margin-top: 50px;
+  }
+
+  .gallery-context-section h1 {
+    font-size: 18px;
+  }
+
+  .gallery-context-section .gallery-info {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .gallery-context-section .gallery-context-menu {
+    height: 180px;
+    padding: 5px;
+    border-left: 2px solid rgb(83, 115, 142);
+    gap: 5px;
+    margin-left: 10px;
+  }
+
+  .gallery-context-menu span {
+    font-size: 12px;
+  }
+
+  .gallery-info .about-gallery {
+    width: 70%;
+  }
+
+  .about-gallery p {
+    width: 90%;
+    font-size: 12px;
+  }
+
+  .event-gallery-section .upper-image-container {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .upper-image-container .about-event-gallery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .upper-image-container .about-event-gallery h1 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 18px;
+  }
+
+  .upper-image-container .about-event-gallery p {
+    color: white;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .upper-image-container .upper-image-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .upper-image-wrapper .image-slideshow {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    position: relative;
+  }
+
+  .upper-image-wrapper .slider-container {
+    margin-top: 50px;
+    width: 100%;
+    max-height: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 0fr);
+    grid-template-rows: repeat(5, 0fr);
+    gap: 10px;
+    overflow: hidden;
+  }
+
+  .event-gallery-section .search-album-wrapper {
+    padding: 10px;
+    border-radius: 4px; /* Rounded corners for wrapper */
+  }
+
+  .search-album-wrapper .search-bar-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+  .search-bar-container h4 {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .search-bar-container select {
+    width: 130px;
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Rounded corners for dropdowns */
+    background-color: white;
+  }
+
+  .search-bar-container select:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none;
+  }
+
+  .search-album-wrapper .album-list {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 20px;
+    justify-content: center;
+    max-height: 230px;
+    overflow-y: auto;
+  }
+
+  /* Optional - Style the scrollbar for better UI */
+  .search-album-wrapper .album-list::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .search-album-wrapper .album-list::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Scrollbar track color */
+  }
+
+  .search-album-wrapper .album-list::-webkit-scrollbar-thumb {
+    background-color: #888; /* Scrollbar thumb color */
+    border-radius: 4px;
+  }
+
+  .search-album-wrapper .album-list::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker color on hover */
+  }
+
+  .album-list .album-item {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners for album items */
+    padding: 15px;
+    background-color: white; /* Background color for album cards */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .album-list .album-item:hover {
+    transform: translateY(-5px); /* Elevate on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+  }
+
+  .album-item h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .album-item p {
+    margin: 5px 0;
+    font-size: 13px;
+    color: #666;
+  }
+
+  .album-item .album-thumbnails {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .album-thumbnails img {
+    width: 40%;
+    height: 80px;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+  }
+
+  .album-thumbnails img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+
+  .event-gallery-section .album-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .album-images img {
+    width: 100%; /* Full width of the grid item */
+    height: 150px; /* Maintain aspect ratio */
+    border-radius: 4px; /* Optional: rounded corners */
+    object-fit: cover; /* Cover the space without stretching */
+  }
+
+  .event-gallery-section .pagination {
+    display: flex;
+    justify-content: center; /* Center pagination */
+    margin-top: 20px; /* Space above pagination */
+    margin-bottom: 20px;
+  }
+
+  .pagination button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin: 0 5px; /* Space between buttons */
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .pagination button:hover:not(:disabled) {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+
+  .pagination button:disabled {
+    background-color: #cccccc; /* Grey color for disabled button */
+    cursor: not-allowed;
+  }
 }

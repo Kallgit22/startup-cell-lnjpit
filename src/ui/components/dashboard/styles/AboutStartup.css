@@ -9,9 +9,10 @@
   width: 100%;
   margin-top: 200px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
-h1 {
+.about-startup-container h1 {
   color: rgb(20, 20, 19);
   position: relative;
   padding: 10px;
@@ -131,4 +132,43 @@ h1 {
 .card p{
   color: black;
   font-size: 13px;
+}
+
+
+@media (max-width: 480px) {
+  .steps{
+    display: none;
+  }
+
+  .image-explore{
+    margin: 0;
+    padding: 0;
+  }
+
+  .startup-info-card-section .startup-info-cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .startup-info-cards .card {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    overflow: hidden;
+  }
+  
+  .card h3 {
+    color: orangered;
+    font-weight: bold;
+    font-size:14px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .card p{
+    color: black;
+    font-size: 12px;
+  }
+  
 }

@@ -80,7 +80,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-items: center;
   box-sizing: border-box;
   padding: 20px;
   background-color: antiquewhite;
@@ -137,4 +136,112 @@
   background-color: #ff3c00d6;
   box-shadow: 0 0 10px 3px rgba(240, 79, 5, 0.5),
   0 0 10px 3px rgba(255, 215, 0, 0.5);
+}
+
+
+@media (max-width:480px) {
+  .initiative-poster-section {
+    height: auto;
+    background-position: left;
+    padding: 20px;
+  }
+  
+  .initiative-poster-section h1 {
+    font-size: 16px;
+  }
+  
+  .initiative-poster-section p {
+    width: 60%;
+    color: white;
+    margin-left: 40px;
+    margin: 20px 0px;
+    padding: 0;
+    font-weight: normal;
+    font-size: 12px;
+  }
+  
+  .initiative-context-section {
+    width: 100%;
+    margin-top: 50px;
+  }
+  
+  .initiative-context-section h1 {
+    font-size: 18px;
+  }
+  
+  .initiative-context-section p {
+    font-size: 11px;
+    width:95%;
+  }
+  
+  .initiative-context-section .about-initiative-container {
+    width: 100%;
+    padding: 10px;
+    margin: 40px 10px;
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    row-gap: 40px;
+  }
+  
+  .intiative-list-section {
+    margin-top: 50px;
+  }
+  
+  .intiative-list-section .initiative-box-wrapper {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(1, auto);
+    row-gap: 40px;
+    margin-top: 40px;
+  }
+  
+  .initiative-box-wrapper .initiative-box{
+    width: 100%;
+  }
+  
+  .initiative-box:hover{
+    height: 250px;
+    justify-content: inherit;
+    align-items: center;
+  }
+  
+  .initiative-box .initiative-box-details {
+    display: none;
+    position: relative;
+    transition: transform 0.5s ease; /* Add transitions for opacity and movement */
+  }
+  
+  .initiative-box:hover .initiative-box-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .initiative-box-details p{
+    font-size: 12px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .initiative-box-details button{
+    width: 50%;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #ff3d00;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .initiative-box-details button:hover{
+    background-color: #ff3c00d6;
+    box-shadow: 0 0 10px 3px rgba(240, 79, 5, 0.5),
+    0 0 10px 3px rgba(255, 215, 0, 0.5);
+  }
+  
 }

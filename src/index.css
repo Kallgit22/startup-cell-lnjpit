@@ -4,3 +4,116 @@ body {
   padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
+
+.hide-dialog{
+  display: none;
+  visibility: hidden;
+}
+
+/* 1. Dark Charcoal & Bright Yellow */
+.dark-charcoal {
+  background-color: #101820; /* Dark Charcoal */
+}
+.bright-yellow {
+  background-color: #FEE715; /* Bright Yellow */
+}
+
+/* 2. Cherry Red & Off-White */
+.cherry-red {
+  background-color: #990011; /* Cherry Red */
+}
+.off-white {
+  background-color: #FCF6F5; /* Off-White */
+}
+
+/* 3. Baby Blue & White */
+.baby-blue {
+  background-color: #8AAAE5; /* Baby Blue */
+}
+
+/* 4. Forest Green & Moss Green */
+.forest-green {
+  background-color: #2C5F2D; /* Forest Green */
+}
+.moss-green {
+  background-color: #97BC62; /* Moss Green */
+}
+
+/* 5. Midnight Blue, Royal Blue & Burgundy Red */
+.midnight-blue {
+  background-color: #1E2761; /* Midnight Blue */
+}
+.royal-blue {
+  background-color: #408EC6; /* Royal Blue */
+}
+.burgundy-red {
+  background-color: #7A2048; /* Burgundy Red */
+}
+
+/* 6. Terracotta Red, Light Beige & Muted Teal */
+.terracotta-red {
+  background-color: #B85042; /* Terracotta Red */
+}
+.light-beige {
+  background-color: #E7E8D1; /* Light Beige */
+}
+.muted-teal {
+  background-color: #A7BEAE; /* Muted Teal */
+}
+
+/* 7. Pastel Olive Green & Salmon Pink */
+.pastel-olive-green {
+  background-color: #A1BE95; /* Pastel Olive Green */
+}
+.salmon-pink {
+  background-color: #F98866; /* Salmon Pink */
+}
+
+/* 8. Deep Periwinkle & Soft Lilac */
+.deep-periwinkle {
+  background-color: #6A6AFF; /* Deep Periwinkle */
+}
+.soft-lilac {
+  background-color: #CBC3E3; /* Soft Lilac */
+}
+
+
+/* 1. Dark Charcoal to Bright Yellow */
+.gradient-charcoal-yellow {
+  background: linear-gradient(to right, #101820, #FEE715); /* Dark Charcoal to Bright Yellow */
+}
+
+/* 2. Cherry Red to Off-White */
+.gradient-red-white {
+  background: linear-gradient(to right, #990011, #FCF6F5); /* Cherry Red to Off-White */
+}
+
+/* 3. Baby Blue to White */
+.gradient-blue-white {
+  background: linear-gradient(to right, #8AAAE5, #FFFFFF); /* Baby Blue to White */
+}
+
+/* 4. Forest Green to Moss Green */
+.gradient-green {
+  background: linear-gradient(to right, #2C5F2D, #97BC62); /* Forest Green to Moss Green */
+}
+
+/* 5. Midnight Blue to Royal Blue to Burgundy Red */
+.gradient-blue-burgundy {
+  background: linear-gradient(to right, #1E2761, #408EC6, #7A2048); /* Midnight Blue to Royal Blue to Burgundy Red */
+}
+
+/* 6. Terracotta Red to Light Beige to Muted Teal */
+.gradient-red-beige-teal {
+  background: linear-gradient(to right, #B85042, #E7E8D1, #A7BEAE); /* Terracotta Red to Light Beige to Muted Teal */
+}
+
+/* 7. Pastel Olive Green to Salmon Pink */
+.gradient-olive-salmon {
+  background: linear-gradient(to right, #A1BE95, #F98866); /* Pastel Olive Green to Salmon Pink */
+}
+
+/* 8. Deep Periwinkle to Soft Lilac */
+.gradient-periwinkle-lilac {
+  background: linear-gradient(to right, #6A6AFF, #CBC3E3); /* Deep Periwinkle to Soft Lilac */
+}

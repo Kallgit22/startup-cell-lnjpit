@@ -67,9 +67,7 @@ const AboutStartup = () => {
           </ul>
         </div>
         <div className="image-explore">
-          <div className="explore-section">
-            <button className="explore-button">Explore →</button>
-          </div>
+         
           <div className="startup-info-card-section">
             <div className="startup-info-cards">
               <div className="card">
@@ -116,6 +114,10 @@ const AboutStartup = () => {
                 </p>
               </div>
             </div>
+          </div>
+
+          <div className="explore-section">
+            <button className="explore-button">Explore →</button>
           </div>
         </div>
       </div>

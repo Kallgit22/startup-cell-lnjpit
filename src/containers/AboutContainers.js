@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { getMemberList, getTestimonials } from "../apis/AppContentAPI";
+import { useSnackbar } from "../context/SnackbarProvider";
 
 export default function AboutContainers({ section }) {
- 
   const [memberData, setMemberData] = useState(null);
   const [sortedmemberData, setSortedMemberData] = useState(null);
   const [testimonials, setTestimonials] = useState(null);
-  
+  const { showSnackbar } = useSnackbar();
 
   useEffect(() => {
     if (memberData != null) {
@@ -15,7 +15,7 @@ export default function AboutContainers({ section }) {
         return parseInt(a.category) - parseInt(b.category);
       });
 
-     setSortedMemberData(sortedData)
+      setSortedMemberData(sortedData);
     }
   }, [memberData]);
 
@@ -28,13 +28,13 @@ export default function AboutContainers({ section }) {
         const testimonials = results[1].data;
         setMemberData(memberList);
         setTestimonials(testimonials);
+      }).catch((error)=>{
+        showSnackbar("Network Error", "error");
       });
     } catch (error) {
-      console.log(error);
+      showSnackbar("Network Error", "error");
     }
   }, []);
-
- 
 
   useEffect(() => {
     if (section) {

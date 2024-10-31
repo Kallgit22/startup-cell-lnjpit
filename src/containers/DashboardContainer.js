@@ -4,6 +4,7 @@ import {
   getInitiatives,
   getNotifications,
 } from "../apis/AppContentAPI";
+import { useSnackbar } from "../context/SnackbarProvider";
 
 export default function DashboardContainer() {
   const [posters, setPosters] = useState(null);
@@ -11,6 +12,7 @@ export default function DashboardContainer() {
   const [mentors, setMentors] = useState(null);
   const [guests, setGuests] = useState(null);
   const [initiatives, setInitiatives] = useState(null);
+  const { showSnackbar } = useSnackbar();
 
   useEffect(() => {
     if (guests != null) {
@@ -45,7 +47,7 @@ export default function DashboardContainer() {
         setInitiatives(Initiatives);
       })
       .catch((error) => {
-        console.log(error);
+        showSnackbar("Network Error","error");
       });
   }, []);
 

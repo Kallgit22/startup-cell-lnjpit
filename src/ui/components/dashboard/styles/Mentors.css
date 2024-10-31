@@ -7,8 +7,7 @@
   margin-top: 100px;
 }
 
-
-.mentors-container h2{
+.mentors-container h2 {
   font-size: 2em;
 }
 .mentors-gallery {
@@ -39,7 +38,6 @@
     transform: translateX(-100%); /* Move to the left side */
   }
 }
-
 
 .mentor-slider .mentor-slide {
   width: 180px;
@@ -81,14 +79,14 @@
   gap: 5px;
 }
 
-.mentor-details span{
+.mentor-details span {
   color: black;
   font-size: 12px;
   font-weight: 600;
   text-align: center;
 }
 
-.mentor-details .mentor-email{
+.mentor-details .mentor-email {
   width: 100%;
   box-sizing: border-box;
   padding: 5px;
@@ -97,9 +95,57 @@
   gap: 3px;
 }
 
-.mentor-email a{
+.mentor-email a {
   text-decoration: none;
   font-size: 11px;
 }
 
+@media (max-width: 480px) {
+  .mentor-slider .mentor-slide {
+    width: 160px;
+    height: 200px;
+    background-image: url(/public/images/backgrounds/abstract-bubbles-background-with-gradient-line-and-blue-color-good-for-background-banner-or-layout-vector.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px;
+    gap: 20px;
+    cursor: pointer;
+  }
 
+  .mentor-slide h4 {
+    color: #ff3d00;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mentors-gallery img {
+    width: 60px;
+    height: 60px;
+  }
+
+
+  .mentor-details span {
+    font-size: 10px;
+  }
+
+  .mentor-details .mentor-email {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .mentor-email a {
+    text-decoration: none;
+    font-size: 10px;
+  }
+}

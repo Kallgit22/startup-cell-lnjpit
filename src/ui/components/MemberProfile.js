@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 import "../styles/MemberProfile.css";
 import { FaLinkedin, FaInstagram, FaFacebookSquare } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import useWindowWidth from "../../hooks/useWindowWidth";
 
 export default function MemberProfile({ data }) {
+  const isMobile = useWindowWidth()
   return (
     <div className="member-profile-wrapper">
       <img
@@ -13,7 +15,7 @@ export default function MemberProfile({ data }) {
         alt={data.name || "Member Profile"}
       />
       <div className="member-details">
-        <span style={{ fontSize: "13px" }}>{data.name}</span>
+        <span style={{ fontSize: isMobile?"12px":"13px" }}>{data.name}</span>
         <span>{data.designation}</span>
       </div>
       <div className="social-links">

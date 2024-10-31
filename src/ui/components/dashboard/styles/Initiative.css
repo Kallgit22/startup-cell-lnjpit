@@ -10,13 +10,13 @@
 }
 
 .paragraphs {
+  width: 75%;
   margin: 0 auto;
   padding-bottom: 30px;
 }
 
 .paragraphs p {
   font-size: 1em;
-  line-height: 0.2;
   margin-bottom: 20px;
 }
 
@@ -74,7 +74,6 @@
   opacity: 0; /* Hide overlay on hover */
 }
 
-
 .smart-slider .slide-details {
   position: absolute; /* Positioning the details on top */
   top: 0;
@@ -104,7 +103,6 @@
   flex: 1; /* Keep other slides smaller */
 }
 
-
 .smart-slide h1 {
   writing-mode: vertical-rl; /* Rotate the text vertically */
   transform: rotate(180deg); /* Flip the text to read from top to bottom */
@@ -126,7 +124,7 @@
   writing-mode: horizontal-tb; /* Change to horizontal writing mode */
 }
 
-.slide-details button{
+.slide-details button {
   cursor: pointer;
   padding: 10px 15px;
   border: none;
@@ -138,13 +136,62 @@
   font-weight: bold;
 }
 
-.slide-details button:hover{
+.slide-details button:hover {
   background-color: #ff3d00;
   color: white;
 }
 
-.slide-details b{
+.slide-details b {
   width: 80%;
   margin-top: 40px;
   font-size: 13px;
+}
+
+@media (max-width: 480px) {
+  .topic {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .paragraphs {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+  }
+
+  .paragraphs p {
+    font-size: 13px;
+    line-height: normal;
+    padding: 5px;
+    margin: 0;
+  }
+
+  .smart-slider-wrapper .smart-slider {
+    flex-direction: column;
+  }
+
+  .smart-slide h1 {
+    width: 80%;
+    font-size: 0.8em;
+    transform: translate(-50%, -50%) rotate(0deg);
+    writing-mode: horizontal-tb;
+  }
+
+  .slide-details b {
+    width: 80%;
+    margin-top: 40px;
+    font-size: 11px;
+  }
+
+  .slide-details button {
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    z-index: 5;
+    font-size: 10px;
+    font-weight: bold;
+  }
 }

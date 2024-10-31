@@ -1,0 +1,114 @@
+.authentication-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.authentication-page .authentication-page-top {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/public/images/backgrounds/tech_back.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.authentication-page-top .authentication-form-wrapper {
+  width: 420px;
+  height: 430px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+  border-radius: 8px;
+  color: #fff;
+  transition: height 0.2s ease;
+}
+
+.authentication-form-wrapper.active {
+  height: 520px;
+}
+
+.authentication-form-wrapper .form-box.login {
+  transition: translate 0.18s ease;
+  translate: 0;
+}
+
+.authentication-form-wrapper.active .form-box.login {
+  transition: none;
+  translate: -400px;
+}
+
+.authentication-form-wrapper.active .form-box.register {
+  transition: translate 0.18s ease;
+  translate: 0;
+}
+.authentication-form-wrapper .form-box.register {
+  position: absolute;
+  transition: none;
+  translate: 400px;
+}
+
+.authentication-form-wrapper .form-box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40px;
+  position: relative;
+}
+
+.authentication-form-wrapper .form-box h1{
+    color: #fff;
+    margin: 0;
+}
+
+.authentication-form-wrapper .form-box p{
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    text-align: center;
+}
+
+.authentication-form-wrapper .form-box a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+@media (max-width:480px) {
+
+  .authentication-page-top .authentication-form-wrapper {
+    width: 420px;
+    height: 330px;
+  }
+  
+  .authentication-form-wrapper.active {
+    height: 400px;
+  }
+
+  .authentication-form-wrapper .form-box h1{
+    color: #fff;
+    margin: 0;
+    font-size: 22px;
+}
+
+.authentication-form-wrapper .form-box p{
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.authentication-form-wrapper .form-box a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+}

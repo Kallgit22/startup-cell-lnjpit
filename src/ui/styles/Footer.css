@@ -30,4 +30,22 @@
   .footer-section a:hover {
     text-decoration: underline;
   }
+
+  @media (max-width: 480px) {
+
+    .footer {
+      justify-content: space-between;  
+      padding: 20px 5px;   
+      height: auto;
+    }
+    .footer-section p{
+      font-size: 10px;
+    }
+    
+    .footer-section a {
+      color: #00aced; 
+      text-decoration: none;
+      font-size: 8px;
+    }
+  }
   

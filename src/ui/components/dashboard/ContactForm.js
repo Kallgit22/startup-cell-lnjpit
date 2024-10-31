@@ -1,74 +1,78 @@
 import React, { useState } from "react";
+import useWindowWidth from "../../../hooks/useWindowWidth";
 
 const ContactForm = () => {
   const [hover, setHover] = useState(false);
+  const windowWidth = useWindowWidth();
+  const isMobile = windowWidth < 480;
 
   const styles = {
     container: {
-      width: "80%",
+      width: isMobile ? "90%" : "80%",
       display: "flex",
+      flexDirection: isMobile ? "column" : "row",
       justifyContent: "space-between",
       alignItems: "center",
       padding: "20px",
       maxWidth: "1440px",
-      marginTop:'100px'
+      marginTop: isMobile ? "20px" : "100px",
+      boxSizing:'border-box'
     },
     formContainer: {
       flex: 1,
-      marginRight: "20px",
+      marginRight: isMobile ? "0px" : "20px",
     },
     heading: {
       color: "red",
-      fontSize: "32px",
+      fontSize: isMobile ? "24px" : "32px",
       marginBottom: "10px",
     },
     description: {
-      fontSize: "18px",
+      fontSize: isMobile ? "16px" : "18px",
       marginBottom: "20px",
+      textAlign: isMobile ? "center" : "left",
     },
     form: {
       display: "flex",
       flexDirection: "column",
+      alignItems: isMobile ? "" : "flex-start",
     },
     input: {
-      padding: "20px",
+      padding: isMobile ? "10px" : "20px",
       margin: "10px 0",
-      fontSize: "20px",
+      fontSize: isMobile ? "16px" : "20px",
       borderRadius: "5px",
       border: "1px solid #ccc",
       width: "100%",
       boxSizing: "border-box",
-      backgroundColor: "#e0f7fa", // Light blue background
+      backgroundColor: "#e0f7fa",
     },
     textarea: {
-      padding: "20px",
+      padding: isMobile ? "10px" : "20px",
       margin: "10px 0",
-      fontSize: "22px",
+      fontSize: isMobile ? "16px" : "22px",
       borderRadius: "5px",
       border: "1px solid #ccc",
-      height: "100px",
-      backgroundColor: "#e0f7fa", // Light blue background
+      height: isMobile ? "80px" : "100px",
+      backgroundColor: "#e0f7fa",
     },
     button: {
-      padding: "10px 30px",
-      fontSize: "22px",
+      padding: isMobile ? "8px 20px" : "10px 30px",
+      fontSize: isMobile ? "18px" : "22px",
       backgroundColor: hover ? "#008CBA" : "#00b0ff",
       color: "white",
       border: "none",
       borderRadius: "5px",
       cursor: "pointer",
-      alignSelf: "flex-start",
-      "&:hover": {
-        backgroundColor: "#008CBA", // Change the background color on hover
-      },
+      alignSelf: isMobile ? "" : "flex-start",
     },
-
     imageContainer: {
       flex: 1,
       textAlign: "center",
+      marginTop: isMobile ? "20px" : "0px",
     },
     image: {
-      width: "80%",
+      width: isMobile ? "60%" : "80%",
       maxWidth: "300px",
     },
   };
@@ -85,7 +89,6 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
     console.log("Form submitted:", formData);
   };
 
@@ -125,7 +128,6 @@ const ContactForm = () => {
             required
             style={styles.textarea}
           />
-
           <button
             type="submit"
             style={styles.button}
@@ -137,9 +139,8 @@ const ContactForm = () => {
         </form>
       </div>
       <div style={styles.imageContainer}>
-        {/* Replace with the actual image or SVG for the mobile illustration */}
         <img
-          src="https://img.freepik.com/free-vector/flat-design-illustration-customer-support_23-2148887720.jpg?t=st=1727282420~exp=1727286020~hmac=6901447a52312c0cad83f7395710c67d5661c9d0853bacb58b7b66a52232f368&w=740" // Placeholder image link
+          src="https://img.freepik.com/free-vector/flat-design-illustration-customer-support_23-2148887720.jpg"
           alt="Contact Illustration"
           style={styles.image}
         />

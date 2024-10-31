@@ -28,7 +28,7 @@ const Slider = ({ posters, notices, onclickExplore }) => {
       <div className="notice-bar">
         {notices &&
           notices.map((notice, index) => (
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div key={index} style={{width:'100%', display: "flex", gap: "10px" }}>
               <a
                 href={notice.url}
                 className="notice"
@@ -37,7 +37,7 @@ const Slider = ({ posters, notices, onclickExplore }) => {
               >
                 {notice.notification}
               </a>
-              {index < notices.length - 1 ? (
+              {/* {index < notices.length - 1 ? (
                 <div
                   style={{
                     width: "1.5px",
@@ -48,7 +48,7 @@ const Slider = ({ posters, notices, onclickExplore }) => {
                 ></div>
               ) : (
                 ""
-              )}
+              )} */}
             </div>
           ))}
       </div>

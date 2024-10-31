@@ -5,8 +5,12 @@ import { HiMiniSpeakerWave } from "react-icons/hi2";
 import { HiMiniSpeakerXMark } from "react-icons/hi2";
 import GalleryContainer from "../../containers/GalleryContainer";
 import UniversalCustomDialog from "../components/UniversalCustomDialog";
+import useWindowWidth from "../../hooks/useWindowWidth"
 
 export default function Gallery() {
+  const windowWidth = useWindowWidth();
+  const isMobile = windowWidth < 480;
+  console.log(isMobile)
   const { section } = useParams();
   const videoRef = useRef(null); // To reference the video element
   const [isMuted, setIsMuted] = useState(false); // Mute state
@@ -24,7 +28,10 @@ export default function Gallery() {
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedAlbum, setSelectedAlbum] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 8; // Number of images to show per page
+  let itemsPerPage = 8;
+  if (isMobile) {
+    itemsPerPage = 4;
+  }
 
   const handleAlbumClick = (album) => {
     console.log(album);
@@ -108,12 +115,12 @@ export default function Gallery() {
             {isMuted ? (
               <HiMiniSpeakerXMark
                 onClick={toggleMute}
-                style={{ width: "48px", height: "48px", color: "white" }}
+                style={{ width: isMobile?"24px":"48px", height: isMobile?"24px":"48px", color: "white" }}
               />
             ) : (
               <HiMiniSpeakerWave
                 onClick={toggleMute}
-                style={{ width: "48px", height: "48px", color: "white" }}
+                style={{ width: isMobile?"24px":"48px", height: isMobile?"24px":"48px", color: "white" }}
               />
             )}
           </div>
@@ -180,8 +187,7 @@ export default function Gallery() {
               initiatives. From workshops and guest lectures to pitch
               competitions and networking sessions, each image tells a story of
               collaboration, learning, and innovation.
-            </p>
-            <p>
+            <br /><br />
               Our events are designed to empower aspiring entrepreneurs and
               foster a community of creativity. Browse through the highlights
               that showcase the enthusiasm, dedication, and teamwork of our

@@ -3,11 +3,10 @@ import "../dashboard/styles/Initiative.css";
 import { useNavigate } from "react-router-dom";
 
 const Initiative = ({ data, className }) => {
-
   const navigate = useNavigate();
-  const handleClick = (id)=>{
-    navigate(`/initiative/${id}`)
-  }
+  const handleClick = (id) => {
+    navigate(`/initiative/${id}`);
+  };
   return (
     <div className={className}>
       <h1 className="topic">Our Initiative</h1>
@@ -15,13 +14,10 @@ const Initiative = ({ data, className }) => {
       <div className="paragraphs">
         <p>
           The Startup Cell, LNJPIIT Chapra has launched various initiatives and
-          recurring programs to foster innovation
+          recurring programs to foster innovation and entrepreneurship among
+          students. These efforts aim to build a vibrant startup ecosystem,
+          empowering students to transform their ideas into successful ventures.
         </p>
-        <p>
-          and entrepreneurship among students. These efforts aim to build a
-          vibrant startup ecosystem, empowering
-        </p>
-        <p>students to transform their ideas into successful ventures.</p>
       </div>
 
       <div className="smart-slider-wrapper">
@@ -35,10 +31,14 @@ const Initiative = ({ data, className }) => {
               <div className="overlay"></div>
               <h1>{initiative.title}</h1>
               <div className="slide-details">
-                <b>
-                {initiative.description}
-                </b>
-                <button onClick={()=>{handleClick(initiative.id)}}>Know More</button>
+                <b>{initiative.description}</b>
+                <button
+                  onClick={() => {
+                    handleClick(initiative.id);
+                  }}
+                >
+                  Know More
+                </button>
               </div>
             </div>
           ))}

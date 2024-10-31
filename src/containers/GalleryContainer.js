@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { getEventAlbums } from "../apis/AppContentAPI";
+import { useSnackbar } from "../context/SnackbarProvider";
 
 export default function GalleryContainer() {
   const [eventAlbums, setEventAlbums] = useState(null);
   const [randomImageList, setRandomImageList] = useState([]);
+  const { showSnackbar } = useSnackbar();
 
 useEffect(() => {
   const imageList = [];
@@ -61,9 +63,11 @@ useEffect(() => {
       Promise.all([getEventAlbums()]).then(function (results) {
         const eventAlbums = results[0].data;
         setEventAlbums(eventAlbums);
+      }).catch((error)=>{
+        showSnackbar("Network Error", "error");
       });
     } catch (error) {
-      console.log(error);
+      showSnackbar("Network Error","error");
     }
   }, []);
   return {

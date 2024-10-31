@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useParams } from "react-router-dom";
 import "./styles/About.css";
 import CustomDialog from "../components/CustomDialog";
+import useWindowWidth from "../../hooks/useWindowWidth";
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -35,6 +36,7 @@ export default function About() {
   const { section } = useParams();
   const [openDialog, setOpenDialog] = useState(false);
   const [dialogContent, setDialogContent] = useState(null);
+  const isMobile = useWindowWidth()
 
   const settings = {
     dots: false,
@@ -76,17 +78,13 @@ export default function About() {
             the power of ideas. Our mission is to create a supportive
             environment where students and young entrepreneurs can turn their
             visions into reality.
-            <br />
-            <br />
-            With access to mentorship and industry networks, we guide our
-            members through every step of their entrepreneurial journey.
           </p>
         </div>
       </section>
 
       <section className="about-us-startup-cell-section">
         <h1 style={{ fontWeight: "bolder" }}>Our Vision</h1>
-        <div style={{ width: "75%", fontSize: "16px" }}>
+        <div style={{ width: isMobile?"85%":"75%", fontSize: isMobile?"12px":"16px" }}>
           <p>
             Our vision is to create a vibrant startup ecosystem that helps
             students and young entrepreneurs turn their ideas into successful
@@ -146,7 +144,7 @@ export default function About() {
       </section>
       <section className="about-us-mission-section mission">
         <h1>Our Mission</h1>
-        <div style={{ width: "75%", fontSize: "16px" }}>
+        <div style={{ width: isMobile?"85%":"75%", fontSize: isMobile?"12px":"16px" }}>
           <p>
             Our mission is to empower young innovators by providing them with
             the tools, resources, and support they need to succeed. We aim to
